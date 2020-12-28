@@ -18,3 +18,4 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+SEO friendly Blog site to help generate awareness and traffic to Healthkarma Consumers 
