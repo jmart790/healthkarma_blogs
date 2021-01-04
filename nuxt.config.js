@@ -11,10 +11,6 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  /*
-  ** Customize the progress-bar color
-  */
-  loading: { color: "coral" },
   env: {
     baseUrl: process.env.NUXT_ENV_BASE_URL || 'http://localhost:3000',
     apiUrl: process.env.NUXT_ENV_API_URL,
@@ -27,7 +23,12 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
+    "~/assets/icomoon.css"
   ],
+  /*
+  ** Customize the progress-bar color
+  */
+  loading: { color: "coral" },
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
@@ -44,9 +45,27 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
+    "@nuxtjs/style-resources",
+    "@nuxtjs/axios",
+    'vue-scrollto/nuxt',
   ],
+
+  styleResources: {
+    scss: [
+      "node_modules/bootstrap/scss/bootstrap.scss",
+      "node_modules/bootstrap-vue/src/index.scss",
+      "~/assets/scss/main.scss",
+      "~/assets/icomoon/style.css"
+    ]
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-  }
+  },
+
+  // allows to edit css in console without page breaking
+  loaders: {
+    scss: { sourceMap: false }
+  },
+
 }
