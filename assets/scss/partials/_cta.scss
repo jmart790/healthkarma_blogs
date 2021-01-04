@@ -1,0 +1,126 @@
+// Call to actions, any button, link, things that call upon an action go here
+
+.btn-solid-primary {
+	background-color: $salmon;
+	border-color: $salmon;
+	border-radius: 30px;
+	color: $white;
+	&:hover {
+		background: linear-gradient(to left, rgba(208, 38, 131, 1) 0%, rgb(208, 38, 131) 100%) !important;
+		color: $white;
+	}
+	&:focus,
+	.focus {
+		border-color: $alert-blue-border;
+		color: $white;
+	}
+	&:active,
+	.active {
+		background-color: $alert-blue-border !important;
+		border-color: $alert-blue-border !important;
+		color: $white !important;
+	}
+}
+
+
+.btn-outline-primary {
+	background-color: $white;
+	border-color: $secondary1;
+	border-radius: 30px;
+	color: $secondary1;
+	&:hover,
+	&:active,
+	&.active {
+		background: linear-gradient(to left, rgba(208, 38, 131, 1) 0%, rgb(208, 38, 131) 100%) !important;
+		color: $white !important;
+	}
+}
+
+// custom gradient button
+.btn__gradient {
+	position: relative;
+	z-index: 1;
+	border: 2px solid $salmon !important;
+	color: $white !important;
+	border-radius: 30px;
+	padding: 0.5rem;
+	background: linear-gradient(to left, rgba(208, 38, 131, 1) 0%, rgb(208, 38, 131) 100%);
+	&::before {
+		position: absolute;
+		border-radius: inherit;
+		content: "";
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+		transition: opacity 0.3s linear;
+		opacity: 0;
+		background: linear-gradient(to left, rgb(155, 28, 98, 1) 0%, rgb(155, 28, 98, 1) 100%);
+	}
+	&:hover {
+		border: 2px solid $primary2 !important;
+	}
+	&:hover::before,
+	&:focus::before {
+		opacity: 1;
+	}
+	&:focus {
+		border: 2px solid $alert-blue-border !important;
+		box-shadow: none !important;
+	}
+}
+
+// carousel
+.carousel-indicators {
+	li {
+		background-color: $white;
+		background-clip: unset;
+		border: 1px solid $gray-text;
+		border-radius: 100%;
+		outline: unset;
+		&.active {
+			background-color: $salmon;
+			border-color: $salmon;
+		}
+	}
+}
+
+// favorite button
+.btn__favorite {
+	outline: none;
+	border: none;
+	background: #fff;
+	i {
+		transition: 0.2s ease-in;
+		color: $salmon;
+		box-shadow: none !important;
+	}
+
+	&:active > i {
+		transform: scale(1.2);
+	}
+	&__text {
+		margin-left: 5px;
+	}
+}
+
+.btn__link {
+	color: $salmon;
+	transition: 100ms ease;
+	&.active, &:hover {
+		cursor: pointer;
+    color: $secondary1;
+    text-decoration: none;
+  }
+  &--alt {
+    color: $secondary1;
+    &.active, &:hover {
+      color: $salmon;
+      text-decoration: none;
+    }
+  }
+}
+.btn-secondary:focus {
+	box-shadow: none !important;
+}

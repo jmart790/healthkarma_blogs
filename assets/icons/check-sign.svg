@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="124" height="124" viewBox="0 0 124 124">
+    <defs>
+        <filter id="prefix__a-check-sign" width="105.8%" height="105.8%" x="-2.1%" y="-2.1%" filterUnits="objectBoundingBox">
+            <feOffset dx="1" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"/>
+        </filter>
+        <filter id="prefix__c-check-sign">
+            <feColorMatrix in="SourceGraphic" values="0 0 0 0 0.998379 0 0 0 0 0.547413 0 0 0 0 0.486339 0 0 0 1.000000 0"/>
+        </filter>
+        <circle id="prefix__b-check-sign" cx="60" cy="60" r="60"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd" transform="translate(1 1)">
+        <use fill="#000" filter="url(#prefix__a-check-sign)" xlink:href="#prefix__b-check-sign"/>
+        <use fill="#FFF" xlink:href="#prefix__b-check-sign"/>
+        <g filter="url(#prefix__c-check-sign)">
+            <path fill="#000" fill-rule="nonzero" d="M92.511 33.042l-47.3 47.3L28.49 63.62c-.792-.791-2.075-.791-2.867 0l-1.91 1.911c-.792.792-.792 2.075 0 2.867l20.066 20.066c.791.792 2.075.792 2.867 0L97.289 37.82c.791-.791.791-2.075 0-2.866l-1.911-1.912c-.792-.791-2.075-.791-2.867 0z"/>
+        </g>
+    </g>
+</svg>

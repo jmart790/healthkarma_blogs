@@ -1,0 +1,13 @@
+.list-style-none {
+  list-style: none;
+}
+
+// this creates effect of grey background with left salmon border on hover
+.list-item-left-border {
+  color: $gray-dark;
+  border-left: 2px solid white;
+  &:hover {
+    background: $dusty-white;
+    border-left: 2px solid $salmon;
+  }
+}
