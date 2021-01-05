@@ -23,7 +23,9 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
-    "~/assets/icomoon.css"
+    // "~/assets/icomoon.css"
+    "~/assets/icomoon/style.css"  
+
   ],
   /*
   ** Customize the progress-bar color
@@ -32,6 +34,7 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    { src: '~/plugins/hk-design.js', mode: 'client' },
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -55,7 +58,6 @@ export default {
       "node_modules/bootstrap/scss/bootstrap.scss",
       "node_modules/bootstrap-vue/src/index.scss",
       "~/assets/scss/main.scss",
-      "~/assets/icomoon/style.css"
     ]
   },
 

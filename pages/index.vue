@@ -3,17 +3,21 @@
     <h1 class="blog-page__title">Blog Page</h1>
     <!-- blogs -->
     <ul class="blog-page__blogs">
-      <li v-for="(i,id) in 3" :key="id" class="blog-page__blog">
+      <li v-for="(blog,id) in testBlogs" :key="id" class="blog-page__blog">
         <header class="blog-img-container">
           <img src="~/assets/images/telehealth_image.png" alt="blog image">
         </header>
         <div class="blog-content">
-          <h2 class="blog-content__title">5 Thigs You should Know About Telemedicine</h2>
+          <h2 class="blog-content__title">{{blog.title}}</h2>
           <p class="blog-content__snippet">Lorem ipsum dolore sot amet, sit dolor sit, lorem ipsum dolore sit amet, sit sit dolore lorem ipsum</p>
-          <button
-            class="blog-content__link"
-          >Read More <span class="icon-navigation-linear-chevron-right" />
-          </button>
+          <h-button
+            variant="terciary"
+            class="px-0"
+            @click="$router.push(`/${blog.url}`)"
+          >
+            Read More
+            <h-icon icon="icon-navigation-linear-chevron-right" size="small" class="d-inline"/>
+          </h-button>
         </div>
       </li>
     </ul>
@@ -25,8 +29,21 @@
 import Stack from "../plugins/entry";
 
 export default {
-  async asyncData({ store }) {
-    
+  async asyncData() {
+    return {
+      testBlogs: [
+        { title: "Eddy's favorite cupcake recipes to stay in shape",
+          url: 'eddies-cupcake-recipes'
+        },
+        { title: "Josh's top plants for small spaces",
+          url: 'plants-by-josh'
+        },
+        {
+          title: "Save more with Carl's recomended RX meds",
+          url: 'carlys-fav-meds'
+        }
+        ]
+    }
   },
 }
 </script>
@@ -82,6 +99,5 @@ export default {
     }
   }
 }
-
 
 </style>
