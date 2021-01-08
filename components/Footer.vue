@@ -1,91 +1,84 @@
 <template>
-  <footer class="app-footer p-3">
-    <div class="app-footer--row-top">
-      <div class="app-footer--row-top-left">
-        
-        <span class="app-footer__hk-logo icon-logo-hkc-full-black" />
-        <div class="mt-4 app-footer--social-icons__desktop">
-          <a target="_blank" href="https://www.facebook.com/HealthKarmaApp">
-            <div class="white-circle">
-              <span class="app-footer--icon icon-brand-facebook"></span>
-            </div>
-          </a>
-          <a
-            class="mx-3"
-            target="_blank"
-            href="https://www.instagram.com/healthkarmaapp"
-          >
-            <div class="white-circle">
-              <span class="app-footer--icon icon-brand-instagram"></span>
-            </div>
-          </a>
-          <a target="_blank" href="https://twitter.com/HealthKarmaApp">
-            <div class="white-circle">
-              <span class="app-footer--icon icon-brand-twitter"></span>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="mt-4 mt-md-0 app-footer--row-top-right">
-        <div class="m-md-3 app-footer--product">
-          <h2 class="text-uppercase mb-1 app-footer--header">Product</h2>
-          <ul class="list-unstyled">
-            <li>
-              <a href="https://app.healthkarma.org/faq">FAQs</a>
-            </li>
-            <li>
-              <a href="#">Blog</a>
-            </li>
-          </ul>
-        </div>
-        <div class="m-md-3 ml-4 app-footer--company">
-          <h2 class="text-uppercase mb-1 app-footer--header">Company</h2>
-          <ul class="list-unstyled">
-            <li>
-              <a href="https://app.healthkarma.org/terms"
-                >Terms and Conditions</a
-              >
-            </li>
-            <li>
-              <a href="https://app.healthkarma.org/privacy">Privacy Policy</a>
-            </li>
-            <li>
-              <a href="mailto:support@healthkarma.org">Contact us</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+  <footer class="app-footer">
+    <h1 class="app-footer__invite-title">Invite friends and family to Health Karma</h1>
+    <p class="app-footer__invite-text">
+      Help your friends and family take charge of their health care with Health Karma.
+    </p>
+    <form class="app-footer__invite-form">
+      <h-input-group placeholder="me@example" class="app-footer__invite-input"/>
+      <h-button variant="primary" class="app-footer__invite-btn">
+        <span class="app-footer__invite-btn-pretext">Send</span> Invite
+      </h-button>
+    </form>
+    <span class="app-footer__hk-logo icon-logo-hkc-full-black" />
+    <div class="app-footer__app-links">
+      <figure class="app-footer__product">
+        <figcaption>PRODUCT</figcaption>
+        <ul class="list-unstyled">
+          <li>
+            <a href="https://app.healthkarma.org/faq">Help</a>
+          </li>
+          <li>
+            <a href="#">Blog</a>
+          </li>
+        </ul>
+      </figure>
+      <figure class="app-footer__company">
+        <figcaption>COMPANY</figcaption>
+        <ul class="list-unstyled">
+          <li>
+            <a href="https://app.healthkarma.org/about">About</a>
+          </li>
+          <li>
+            <a href="https://app.healthkarma.org/terms">Terms and Conditions</a>
+          </li>
+          <li>
+            <a href="https://app.healthkarma.org/privacy">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="mailto:support@healthkarma.org">Contact us</a>
+          </li>
+        </ul>
+      </figure>
     </div>
-    <div class="app-footer--row-bottom">
-      <div class="mb-4 app-footer--social-icons__mobile">
+    <hr class="app-footer__line-break">
+    <ul class="app-footer__social-links" >
+      <li>
         <a target="_blank" href="https://www.facebook.com/HealthKarmaApp">
-          <div class="white-circle">
-            <span class="icon-brand-facebook app-footer--icon"></span>
-          </div>
+          <h-button
+            class="app-footer__social-link"
+            isCircle
+            icon="icon-brand-facebook"
+            iconSize="medium"
+          />
         </a>
-        <a
-          class="mx-3"
-          target="_blank"
-          href="https://www.instagram.com/healthkarmaapp"
-        >
-          <div class="white-circle">
-            <span class="icon-brand-instagram app-footer--icon"></span>
-          </div>
+      </li>
+      <li>
+        <a target="_blank" href="https://www.instagram.com/healthkarmaapp">
+          <h-button
+            class="app-footer__social-link"
+            isCircle
+            icon="icon-brand-instagram"
+            iconSize="medium"
+          />
         </a>
+      </li>
+      <li>
         <a target="_blank" href="https://twitter.com/HealthKarmaApp">
-          <div class="white-circle">
-            <span class="icon-brand-twitter app-footer--icon"></span>
-          </div>
+          <h-button
+            class="app-footer__social-link"
+            isCircle
+            icon="icon-brand-twitter"
+            iconSize="medium"
+          />
         </a>
-      </div>
-      <b-img
-        class="col-img mt-2 app-footer--medixall-logo"
-        :src="require('../assets/images/medixall-group-logo-white.svg')"
-      />
-      <p class="app-footer--copyright">
-        © 2020 All rights reserved. HealthKarma<sup>TM</sup>
-      </p>
-    </div>
+      </li>
+    </ul>
+    <span class="icon-medixall-brand app-footer__medixall-logo" />
+    <p class="app-footer__copyright">
+      © 2020 All rights reserved.
+      <br> HealthKarma<sup>TM</sup>
+    </p>
   </footer>
 </template>
 
@@ -97,90 +90,186 @@ export default {
 
 <style lang="scss">
 .app-footer {
-  bottom: 0;
+  display: grid;
+  grid-gap: 16px;
   width: 100%;
+  padding: 16px 24px;
   background: $secondary2;
   color: white;
+  @media screen and (min-width: $tablet) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+      "invite-title    invite-title          "
+      "invite-text     invite-form"
+      "hk-logo         app-links"
+      "social-links    app-links"
+      "line-break      line-break"
+      "medixall-logo   .         "
+      "copyright       .         ";
+  }
+  @media screen and (min-width: $laptop) { 
+    padding: 16px 36px;
+  }
+
+  &__invite-title {
+    max-width: 20ch;
+    margin-bottom: unset;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.33;
+    color: $secondary3;
+    @media screen and (min-width: $mobile-lg) { 
+      max-width: unset;
+    }
+    @media screen and (min-width: $tablet) { 
+      grid-area: invite-title;
+    }
+    @media screen and (min-width: $laptop-lg) { 
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+  }
+  &__invite-text {
+    max-width: 282px;
+    margin-bottom: unset;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.71;
+    font-family: $font-primary;
+    @media screen and (min-width: $mobile-lg) { 
+      max-width: 40ch;
+      margin-right: 24px;
+    }
+    @media screen and (min-width: $tablet) { 
+      grid-area: invite-text;
+      margin-bottom: 24px;
+    }
+    @media screen and (min-width: $laptop-lg) { 
+      font-size: 18px;
+      line-height: 1.56;
+    }
+  }
+  &__invite-form {
+    max-height: 38px;
+    display: flex;
+    @media screen and (min-width: $tablet) { 
+      justify-content: flex-end;
+      grid-area: invite-form;
+    }
+  }
+  &__invite-input {
+    width: 100%;
+    margin-right: $spacing_xs;
+    @media screen and (min-width: $tablet) { 
+      max-width: 380px;
+    }
+  }
+  &__invite-btn {
+    min-width: unset !important;
+    padding: 0 24px !important;
+    @media screen and (min-width: $laptop-lg) {
+      min-width: 178px !important;
+    }
+  }
+  &__invite-btn-pretext {
+    display: none;
+    @media screen and (min-width: $laptop-lg) {
+      display: inline;
+    }
+  }
 
   &__hk-logo {
-    font-size: 30px;
+    margin-bottom: 16px;
+    font-size: 32px;
+    @media screen and (min-width: $tablet) { 
+      grid-area: hk-logo;
+      margin-bottom: unset;
+    }
   }
-  &--header {
-    width: 72px;
-    height: 20px;
+
+  
+  &__app-links {
+    display: flex;
+    font-family: $font-primary;
     font-size: 14px;
-    font-weight: bold;
-    line-height: 1.43;
-  }
-  &--row-top {
-    display: flex;
-    justify-content: space-between;
-    @media (max-width: 576px) {
-      flex-direction: column;
+    figure {
+      margin-right: 32px;
     }
-  }
-  &--row-top-left {
-    display: flex;
-    flex-direction: column;
-  }
-  &--social-icons {
-    &__desktop {
-      display: flex;
-      color: $black;
-      @media (max-width: 576px) {
-        display: none;
-      }
+    figure, ul {
+      margin-bottom: unset;
     }
-    &__mobile {
-      display: flex;
-      @media (min-width: 576px) {
-        display: none;
-      }
+    figcaption {
+      margin-bottom: 12px;
+      font-weight: bold;
+      line-height: 1.43;
     }
-  }
-  &--medixall-logo {
-    width: 200px;
-  }
-  &--row-top-right {
-    display: flex;
-    a {
-      width: 35px;
-      height: 24px;
-      font-size: 14px;
-      line-height: 1.71;
+    ul li {
+      margin-bottom: 4px;
+    }
+    ul li a {
       color: $white;
+      font-weight: 300;
       &:hover {
         color: $secondary3;
       }
     }
+    @media screen and (min-width: $tablet) { 
+      grid-area: app-links;
+      justify-content: flex-end;
+    }
+    @media screen and (min-width: $laptop-lg) {
+      margin-bottom: 16px;
+    }
   }
-  &--row-bottom {
+  &__product {
+    min-width: 100px;
+  }
+
+  &__line-break {
+    border-bottom: solid 0.5px $white;
+    margin: unset;
+    opacity: .5;
+    @media screen and (min-width: $tablet) { 
+      grid-area: line-break;
+    }
+  }
+
+  &__social-links {
     display: flex;
-    flex-direction: column;
-    padding-top: 20px;
-    border-top: 0.3px solid white;
+    margin-bottom: 8px;
+    li { 
+      list-style: none;
+      margin-right: 16px;
+    }
+    @media screen and (min-width: $tablet) { 
+      grid-area: social-links;
+    }
   }
-  &--copyright {
-    width: 340px;
-    height: 30px;
+  &__social-link {
+    border: unset !important;
+    background-color: $white;
+    color: $gray-darkest;
+  }
+
+
+  &__medixall-logo {
+    font-size: 48px;
+    @media screen and (min-width: $tablet) { 
+      grid-area: medixall-logo;
+    }
+  }
+  &__copyright {
+    font-family: $font-primary;
     font-size: 14px;
-    line-height: 2.14;
+    line-height: 1.79;
+    font-weight: 300;
+    @media screen and (min-width: $tablet) { 
+      grid-area: copyright;
+      br {
+        display: none;
+      }
+    }
   }
-  &--icon {
-    color: #342737;
-  }
-}
-.white-circle {
-  border-radius: 50px;
-  height: 35px;
-  width: 35px;
-  background: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.icon-full-white {
-  color: white;
-  font-size: 30px;
 }
 </style>
