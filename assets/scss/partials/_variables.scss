@@ -15,7 +15,7 @@ $alert-blue:				    #CCF0FB;
 $alert-blue-border:			#00B8EC;
 $alert-green:				    #CDEDE5;
 $alert-green-border:		#06A77D;
-$alert-text:				      $secondary2;
+$alert-text:				     	$secondary2;
 $box-shadow-color:      #eff6ff;
 
 
@@ -28,11 +28,11 @@ $gray-dark-new:			   	#2d353f; // covid link
 $salmon:                    #d02683;
 $peachy-pink:               #ff8c7c;
 $pink-light:                #ffe8e8;
-$teal-medium: #8ebebb;
+$teal-medium: 							#8ebebb;
 $teal-light:                #dcebea;
 $dusty-lavender:            #a596a6;
 $slate:                     #485867;
-$blue-light: #DFECFF;
+$blue-light: 								#DFECFF;
 $blue-lighter:			      	#3863ff;
 $bluey-gray:                #9aaab9;
 $bluey-gray-light:          #F1F4F7;
@@ -50,10 +50,10 @@ $danger:                    #ff4136;
 // 50 shades of gray
 $dusty-white:               #F8FBFF;
 $gray-lightest:             #eeeeee;
-$gray-lighter:			    #f3f5f7;
+$gray-lighter:			    		#f3f5f7;
 $gray-light:                #b3b3b3;
 $gray-medium:               #7e7f7e;
-$gray-medium-light: 		#5d6369;
+$gray-medium-light: 				#5d6369;
 $gray-medium-dark:          #676767;
 $gray-dark:                 #525252;
 $gray-dark-alt:             #5c5c5c;
@@ -62,7 +62,7 @@ $cool-gray-11:              #9aaab83a;
 $placeholder-gray:          #bbbbbb;
 $bright-gray:               #ededed;
 $main-grey:                 #cdcdcd;
-$gray-form-new:			    #5d6369;
+$gray-form-new:			    		#5d6369;
 $gray-text:                 #adadad;
 $box-gray:                  #d8d8d8;
 $white:                     #fff;
@@ -100,14 +100,14 @@ $theme-colors: (
 );
 
 $bv-enable-popover-variants: 				true;
-$fa-font-path: 								"../assets/fonts/font-awesome/";
-$btn-border-width: 							2px;
+$fa-font-path: 											"../assets/fonts/font-awesome/";
+$btn-border-width: 									2px;
 $nav-pills-border-radius: 					0;
-$navbar-light-toggler-border-color:         transparent;
+$navbar-light-toggler-border-color: transparent;
 $navbar-toggler-padding-x: 					0;
 
 // Font styles
-$font-size-base: 						1.125rem !default; // = 18px
+$font-size-base: 										1.125rem !default; // = 18px
 $font-size-lg:                			$font-size-base * 1.25 !default;
 $font-size-sm:                			$font-size-base * .875 !default;
 $font-weight-lighter:         			200 !default;
@@ -120,7 +120,7 @@ $body-color: 												$gray-dark;
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,400&display=swap');
-$font-primary: 						"Lato", sans-serif !default;
+$font-primary: 							"Lato", sans-serif !default;
 $font-heading: 							"Montserrat", sans-serif !default;
 
 // Carousel
@@ -136,10 +136,10 @@ $carousel-control-prev-icon-bg:      str-replace(url("data:image/svg+xml,%3csvg 
 $carousel-control-next-icon-bg:      str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 25 24'%3e%3cpath d='M5.617.24L5.24.617c-.251.251-.251.658 0 .91L15.71 12 5.24 22.473c-.251.25-.251.658 0 .91l.378.378c.251.25.658.25.91 0l11.306-11.306c.25-.251.25-.659 0-.91L6.527.24c-.252-.25-.659-.25-.91 0z'/%3e%3c/svg%3e"), "#", "%23") !default;
 
 // Shadows
-$box-shadow: 						0 2px 7px 0 rgba(0, 0, 0, .35) ;
-$box-shadow-sm: 					0 3px 6px 1px rgba(0, 0, 0, 0.22);
+$box-shadow: 												0 2px 7px 0 rgba(0, 0, 0, .35) ;
+$box-shadow-sm: 										0 3px 6px 1px rgba(0, 0, 0, 0.22);
 $box-shadow-lg:                     0 4px 12px rgba($black, 0.15);
-$box-shadow-new:         0 6px 10px 0 $box-shadow-color;
+$box-shadow-new:         						0 6px 10px 0 $box-shadow-color;
 
 //  Forms  //
 $input-font-size:										16px !default;
@@ -160,12 +160,12 @@ $custom-select-indicator:           str-replace(url("data:image/svg+xml,%3csvg x
 $custom-select-border-color:        $input-border-color !default;
 
 // Spacing
-$spacing-xxs: 4px !default;
-$spacing_xs: 8px !default;
-$spacing_s: 16px !default;
-$spacing_m: 24px !default;
-$spacing_l: 32px !default;
-$spacing_xl: 64px !default;
+$spacing-xxs: 											4px !default;
+$spacing_xs: 												8px !default;
+$spacing_s: 												16px !default;
+$spacing_m: 												24px !default;
+$spacing_l: 												32px !default;
+$spacing_xl: 												64px !default;
 
 // Pagination  //
 $pagination-disabled-color:         $gray-light !default;
@@ -181,12 +181,12 @@ $toast-font-size:                   $font-size-base !default;
 
 // Extra global variables DO NOT MOVE OR CHANGE
 $search-input-height: 				    50px;
-$rounded: 								4px;
-$rounded-md: 							8px;
-$rounded-lg: 							16px;
+$rounded: 												4px;
+$rounded-md: 											8px;
+$rounded-lg: 											16px;
 
 // Animations 
-$transition-time: .2s !default;
+$transition-time: 								.2s !default;
 
 
 
