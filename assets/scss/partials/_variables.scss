@@ -118,10 +118,8 @@ $font-weight-bolder:          			700 !default;
 
 $body-color: 												$gray-dark;
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,400&display=swap');
-$font-primary: 							"Lato", sans-serif !default;
-$font-heading: 							"Montserrat", sans-serif !default;
+$font-primary: 							'Open Sans', sans-serif !default;
+$font-heading: 							'Raleway', sans-serif !default;
 
 // Carousel
 $carousel-control-color:             $salmon !default;
