@@ -10,11 +10,19 @@
       <span class="font-600">See All Blogs</span>
     </h-button>
     <section class="blog-page__hero-container">
-      <img src="https://www.biggerbolderbaking.com/wp-content/uploads/2017/09/1C5A0996.jpg" alt="hero image">
+      <img v-if="blog.header_image" :src="blog.header_image.url" alt="hero image">
     </section>
     <section class="blog-page__body">
-      <RecentBlogs class="blog-page__recent-posts" />
-      <BlogArticle :article="article" class="blog-page__article"/>
+      <RecentBlogs 
+        class="blog-page__recent-posts" 
+        :recentBlogs="recentBlogs" 
+        :formatToYearMonth="formatToYearMonth" 
+      />
+      <BlogArticle 
+        class="blog-page__article"
+        :article="blog" 
+        :formatToYearMonth="formatToYearMonth" 
+      />
     </section>
   </div>
 </template>
@@ -27,16 +35,42 @@ export default {
   components: {
     RecentBlogs, BlogArticle
   },
-  async asyncData({ params }) {
+  async asyncData({ params,  $axios, $config: {baseURL} }) {
+    const blogURL = params.blog
+    console.log({params});
+    console.log('url: ', `${baseURL}/blogs/${blogURL}`);
+    const blog = await $axios.$get(`${baseURL}/blogs/${blogURL}`)
+      .then(({status, message, data}) =>{
+        if (status === 'SUCCESS') return data
+        else return {}
+      })
+      .catch(err => {});
 
-    const blogId = params.blog
+    // Last 3 blogs
+    const recentBlogs = (await $axios.$get(`${baseURL}/blogs`)).data.slice(0,3);
+
     return {
-      blogId,
-      article: {
-        title: "5 things you should know about telemedicine in the face of our COVID-19 world",
-        date: "Posted by Health Karma October 2020",
-        blurb: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id. reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim"
-      }
+      blog,
+      recentBlogs
+    }
+  },
+  methods: {
+    formatToYearMonth(date) {
+      const month = new Date(date).toLocaleString('default', { month: 'long' })
+      const year = date.split('-')[0]
+      return month + ' ' + year
+    }
+  },
+  head() {
+    return {
+      title: this.blog.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Home page description'
+        }
+      ],
     }
   }
 }
@@ -87,6 +121,7 @@ export default {
       min-width: 1025px;
       margin-top: -72px;
       margin-left: auto;
+      margin-right: 36px;
       padding: 32px 24px;
       padding-bottom: 45px;
     }
