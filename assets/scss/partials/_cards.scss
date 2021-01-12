@@ -1,0 +1,81 @@
+// This file is to customize new and overwrite bootstrap cards
+@include media-breakpoint-up(sm) {
+	.bg-sm-light {
+		background-color: $light;
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	.no-card-sm {
+		box-shadow: none !important;
+		background-color: transparent !important;
+		.card-body {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}
+
+.remove-card {
+	@media (max-width: 991px) {
+		box-shadow: initial !important;
+		border-radius: initial !important;
+	}
+}
+
+.info-card {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	margin-top: 5px;
+	&__header {
+		display: flex;
+		margin: 0;
+		padding-left: 10px;
+		width: 100%;
+		min-height: 50px;
+		h5 {
+			margin-left: 10px;
+		}
+	}
+	&__body {
+		padding: 25px 20px;
+		width: inherit;
+		height: 100%;
+		border-radius: 5px;
+		border: solid 1px $dusty-white;
+		background-color: $white;
+		box-shadow: $box-shadow-color;
+		&--edu {
+			max-height: 90%;
+		}
+		&--loc {
+			max-height: 300px;
+			min-height: 200px;
+			border-radius: 0 0 5px 5px;
+			overflow-y: scroll;
+			@media (min-width: 767px) {
+				flex-direction: row;
+				min-height: 300px;
+				border-radius: 0 5px 5px 0;
+			}
+			@media (min-width: 1300px) {
+				min-height: 350px;
+				border-radius: 0 0 5px 5px;
+			}
+		}
+	}
+	&__link{
+		color: $gray-text;
+		transition: 100ms ease;
+		&.active, &:hover {
+			cursor: pointer;
+			color: $salmon;
+		}
+	}
+}
+
+.wellness__card {
+	width: 499px;
+	height: 240px
+}

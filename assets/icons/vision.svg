@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="110" height="110" viewBox="0 0 110 110">
+    <defs>
+        <filter id="lf46onkara" width="136.7%" height="136.7%" x="-15%" y="-17.2%" filterUnits="objectBoundingBox">
+            <feOffset dx="3" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="5"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.937254902 0 0 0 0 0.964705882 0 0 0 0 1 0 0 0 1 0"/>
+        </filter>
+        <circle id="ii84mklxbb" cx="45" cy="45" r="45"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g>
+                        <g transform="translate(-244 -414) translate(36 225) translate(0 47) translate(215 151)">
+                            <use fill="#000" filter="url(#lf46onkara)" xlink:href="#ii84mklxbb"/>
+                            <use fill="#FFF" xlink:href="#ii84mklxbb"/>
+                        </g>
+                        <g fill-rule="nonzero">
+                            <g transform="translate(-244 -414) translate(36 225) translate(0 47) translate(215 151) translate(23 13) translate(0 .5)">
+                                <path fill="#E9F3FB" d="M21.313 56.079v5.573h2.062v-5.573c-.342.018-.685.029-1.031.029-.346 0-.69-.01-1.032-.03z"/>
+                                <ellipse cx="22.344" cy="32.393" fill="#FFF0D6" rx="19.594" ry="20.202"/>
+                                <g fill="#B3B6B9">
+                                    <path d="M.07 8.203l4.946 4.92c.535-.557 1.098-1.087 1.685-1.59L1.712 6.57.07 8.203zM9.566 1.35l2.751 6.607c.702-.318 1.422-.604 2.158-.854L11.711.466l-2.145.883z" transform="translate(0 2.438)"/>
+                                </g>
+                                <path fill="#B3B6B9" d="M34.375 3.342l-2.103-.904-2.71 6.79c.722.256 1.428.548 2.116.873l2.697-6.759zM38.873 15.674L44 10.444l-1.702-1.736-5.173 5.276c.61.534 1.193 1.098 1.748 1.69zM21.313 56.079v5.573h2.062v-5.573c-.342.018-.685.029-1.031.029-.346 0-.69-.01-1.032-.03zM3.957 47.72L0 51.698l1.585 1.593L5.5 49.355c-.54-.52-1.055-1.066-1.543-1.636zM30.25 54.943l2.052 5.315 2.073-.921-2.064-5.348c-.67.353-1.357.672-2.061.954zM38.5 49.355l3.915 3.937L44 51.7l-3.957-3.98c-.488.57-1.003 1.117-1.543 1.636zM9.625 59.337l2.073.921 2.052-5.315c-.704-.282-1.391-.601-2.06-.954l-2.065 5.348zM21.313 7.981c.691 0 1.379.01 2.062.03V.348h-2.063v7.633z"/>
+                                <path fill="#B3B6B9" d="M41.938 32.393c0 11.158-8.927 20.203-19.938 20.203V12.19c11.011 0 19.938 9.045 19.938 20.202z" opacity=".3"/>
+                                <ellipse cx="22.344" cy="32.045" fill="#06A77D" rx="12.719" ry="12.888"/>
+                                <path fill="#294ABF" d="M35.063 32.045c0 7.118-5.849 12.888-13.063 12.888V19.157c7.214 0 13.063 5.77 13.063 12.888z" opacity=".364"/>
+                                <ellipse cx="21.656" cy="32.045" fill="#132259" rx="6.531" ry="6.618"/>
+                                <path fill="#000" d="M28.875 32.045c0 3.655-3.078 6.618-6.875 6.618V25.427c3.797 0 6.875 2.963 6.875 6.618z"/>
+                                <ellipse cx="17.531" cy="27.169" fill="#E9F3FB" rx="1.719" ry="1.742"/>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

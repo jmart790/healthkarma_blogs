@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>BDEC8E11-4113-4CED-87B9-0183F3EE2E4C@1.00x</title>
+    <defs>
+        <filter id="check-svg">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Telehealth-Landing-Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="HK_Telehealth_LP_FAQ_375px" transform="translate(-51.000000, -3308.000000)">
+            <g id="mailing-list" transform="translate(-29.000000, 3261.000000)">
+                <g id="confirmation-state" transform="translate(57.000000, 29.000000)">
+                    <g id="check" transform="translate(23.000000, 18.000000)">
+                        <circle id="Oval" fill="#8EBEBB" cx="24" cy="24" r="24"></circle>
+                        <g filter="url(#check-svg)" fill="#FFFFFF" id="Linear/check">
+                            <g transform="translate(10.000000, 10.000000)">
+                                <g fill="none" transform="translate(0.000000, 3.500000)" fill-rule="nonzero" id="Path">
+                                    <path d="M25.9507658,0.249162162 L8.29216216,17.9077658 L2.04923423,11.6648378 C1.75372072,11.3693243 1.27456757,11.3693243 0.978990991,11.6648378 L0.265558559,12.3782703 C-0.029954955,12.6737838 -0.029954955,13.1529369 0.265558559,13.4485135 L7.75707207,20.940027 C8.05258559,21.2355405 8.53173874,21.2355405 8.82731532,20.940027 L27.7344414,2.0329009 C28.029955,1.73738739 28.029955,1.25823423 27.7344414,0.962657658 L27.0209459,0.249162162 C26.7254324,-0.0463513514 26.2462793,-0.0463513514 25.9507658,0.249162162 Z" fill="#000000"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
