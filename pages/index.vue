@@ -1,19 +1,19 @@
 <template>
-  <div class="blog-index-page">
-    <h1 class="blog-index-page__title">Blog Page Title</h1>
+  <main class="blog-index-page">
+    <h1 class="blog-index-page__title">Health Karma Blogs</h1>
     <!-- blogs -->
     <ul class="blog-index-page__blogs">
-      <li v-for="(blog,id) in [...testBlogs, ...testBlogs, ...testBlogs]" :key="id" class="blog-index-page__blog">
+      <li v-for="(blog,id) in [...blogs, ...blogs, ...blogs]" :key="id" class="blog-index-page__blog">
         <header class="blog-img-container">
-          <img :src="blog.image" :alt="`${blog.title} image`" loading="lazy">
+          <img :src="handleImage(blog)" :alt="`${blog.title} image`" loading="lazy">
         </header>
         <div class="blog-content">
           <h2 class="blog-content__title">{{blog.title}}</h2>
-          <p class="blog-content__snippet">Lorem ipsum dolore sot amet, sit dolor sit, lorem ipsum dolore sit amet, sit sit dolore lorem ipsum</p>
+          <div v-html="blog.blog_copy.rich_text_editor" class="blog-content__snippet" />
           <h-button
             variant="terciary"
             class="px-0"
-            @click="$router.push(`/${blog.url}`)"
+            @click="$router.push(blog.url)"
             icon="icon-navigation-linear-chevron-right"
             flipContent
           >
@@ -23,33 +23,39 @@
       </li>
     </ul>
     <!-- pagination -->
-  </div>
+    <Pagination />
+
+  </main>
 </template>
 
 <script>
+import Pagination from '~/components/base/Pagination.vue';
+
 export default {
-  async asyncData() {
+	components: { Pagination },
+  async asyncData({ $axios, $config: { baseURL } }) {
+    const blogs = await $axios.$get(`${baseURL}/blogs`);
     return {
-      testBlogs: [
-        { title: "Eddy's favorite cupcake recipes to stay in shape",
-          image: "https://www.biggerbolderbaking.com/wp-content/uploads/2017/09/1C5A0996.jpg",
-          content: "Lorem ipsum dolore sot amet, sit dolor sit, lorem ipsum dolore sit amet, sit sit dolore lorem ipsum",
-          url: 'eddies-cupcake-recipes'
-        },
-        { title: "Josh's top plants for small spaces",
-          image: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/various-beautiful-green-plants-in-pots-on-white-royalty-free-image-931824676-1565950537.jpg?crop=0.825xw:0.620xh;0.0785xw,0.132xh&resize=1200:*",
-          content: "Lorem ipsum dolore sot amet, sit dolor sit, lorem ipsum dolore sit amet, sit sit dolore lorem ipsum",
-          url: 'plants-by-josh'
-        },
-        {
-          title: "Save more with Carl's recomended RX meds",
-          image: "https://s.abcnews.com/images/Health/GTY_pill_bottle_kab_140618_16x9_992.jpg",
-          content: "Lorem ipsum dolore sot amet, sit dolor sit, lorem ipsum dolore sit amet, sit sit dolore lorem ipsum",
-          url: 'carlys-fav-meds'
-        }
-        ]
+      blogs: blogs.data,
     }
   },
+  methods: {
+    handleImage(blog) {
+      if (blog.thumbnail_image) return blog.thumbnail_image.url
+      else if (blog.header_image) return blog.header_image.url
+      else return ''
+    } 
+  },
+  head: {
+    title: 'Health Karma Blogs',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Home page description'
+      }
+    ],
+  }
 }
 </script>
 
@@ -94,7 +100,7 @@ export default {
       max-width: 308px;
     }
     .blog-img-container {
-      height: 130px;
+      height: 200px;
       overflow: hidden;
       img {
         height: 100%;
@@ -104,6 +110,7 @@ export default {
     .blog-content {
       padding: $spacing_s $spacing_m;
       &__title {
+        min-height: 54px;
         font-family: $font-primary;
         font-size: 16px;
         font-weight: bold;
@@ -115,9 +122,12 @@ export default {
         }
       }
       &__snippet {
+        max-height: 75px;
+        margin-bottom: 24px;
         font-size: 14px;
         line-height: 1.43;
         color: $black-light;
+        overflow: hidden;
         @media screen and (min-width: $laptop) { 
           font-size: 16px;
           line-height: 24px;
