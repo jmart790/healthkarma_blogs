@@ -9,28 +9,34 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    link: [
+      {
+        rel: 'stylesheet',
+        href:
+          'href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap'
+      }
+    ],
+    link: [
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700;800&display=swap'
+      }
     ]
   },
   env: {
-    baseUrl: process.env.NUXT_ENV_BASE_URL || 'http://localhost:3000',
-    apiUrl: process.env.NUXT_ENV_API_URL,
-
-    // for content stack
-    api_key: process.env.CONTENT_STACK_API_KEY,
-    delivery_token: process.env.CONTENT_STACK_TOKEN,
-    environment: process.env.CONTENT_STACK_ENVIRONMENT,
+    baseURL: process.env.NUXT_ENV_API_URL,
   },
-
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
     // "~/assets/icomoon.css"
     "~/assets/icomoon/style.css"  
-
   ],
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: "coral" },
+  loading: { color: "#d02683" },
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
@@ -52,7 +58,9 @@ export default {
     "@nuxtjs/axios",
     'vue-scrollto/nuxt',
   ],
-
+  publicRuntimeConfig: {
+    baseURL: process.env.NUXT_ENV_BASE_URL
+  },
   styleResources: {
     scss: [
       "node_modules/bootstrap/scss/bootstrap.scss",
@@ -61,13 +69,12 @@ export default {
     ]
   },
 
-  // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {
-  },
-
   // allows to edit css in console without page breaking
   loaders: {
     scss: { sourceMap: false }
   },
-
+  // Build Configuration (https://go.nuxtjs.dev/config-build)
+  build: {
+  },
+  
 }
