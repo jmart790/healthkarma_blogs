@@ -52,7 +52,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Home page description'
+        content: 'Healthcare resources you can depend on'
       }
     ],
   }
@@ -128,6 +128,7 @@ export default {
         line-height: 1.43;
         color: $black-light;
         overflow: hidden;
+        font-family: $font-primary;
         @media screen and (min-width: $laptop) { 
           font-size: 16px;
           line-height: 24px;
