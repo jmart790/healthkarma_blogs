@@ -6,10 +6,10 @@
       <div class="ml-auto">
         <b-navbar-nav class="d-flex align-items-center">
           <b-nav-item href="https://app.healthkarma.org/search">
-            Search Providers
+            Search
           </b-nav-item>
           <b-nav-item href="https://app.healthkarma.org/faq">
-            FAQs 
+            Help 
           </b-nav-item>
         </b-navbar-nav>
       </div>
