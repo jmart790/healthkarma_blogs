@@ -8,22 +8,22 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ],
-    link: [
+      { 
+        rel: 'icon', 
+        type: 'image/x-icon', 
+        href: '/favicon.ico' 
+      },
       {
         rel: 'stylesheet',
         href:
-          'href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap'
-      }
-    ],
-    link: [
+          'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Raleway:wght@200;300;400;500;600;700;800&display=swap'
+      },
       {
         rel: 'stylesheet',
         href:
           'https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700;800&display=swap'
       }
-    ]
+    ],
   },
   env: {
     baseURL: process.env.NUXT_ENV_API_URL,
