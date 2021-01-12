@@ -2,11 +2,20 @@
   <aside class="recent-blogs">
     <h4 class="recent-blogs__title">Recent Posts</h4>
     <ul class="recent-blogs__blogs-container">
-      <li v-for="i in 3" :key="`${i}-recentpost`" class="recent-blogs__blog-post">
-        <NuxtLink to="/" class="recent-blogs__blog-link">
-          Which doctor’s appointments you should schedule in 2020<br>
+      <li 
+        v-for="(blog, id) in recentBlogs" 
+        :key="`${id}-recentpost`" 
+        class="recent-blogs__blog-post"
+      >
+        <NuxtLink 
+          :to="blog.url" 
+          class="recent-blogs__blog-link"
+        >
+          {{blog.title}}<br>
         </NuxtLink>
-        <span class="recent-blogs__blog-date">October 2020</span>
+        <span class="recent-blogs__blog-date">
+          {{extractYearMonth(blog.date_of_published_blog)}}
+        </span>
       </li>
     </ul>
   </aside>
@@ -14,12 +23,15 @@
 
 <script>
 export default {
-  created() {
-    // call to the BE to retrieve recent blogs and save state
+  props: {
+    recentBlogs: {
+      type: Array,
+      required: true
+    },
   },
-  data() {
-    return {
-      recentBlogs: []
+  methods: {
+    extractYearMonth(publishDetails) {
+      return publishDetails.split(',')[1]
     }
   }
 }
