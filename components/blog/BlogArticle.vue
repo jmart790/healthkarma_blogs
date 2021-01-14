@@ -9,7 +9,7 @@
         class="blog-article__link"
       ><b>Share</b>
       </h-button>
-      <template v-if="article.social.length">
+      <template v-if="article.social && article.social.length">
         <a 
           v-for="(item,id) in article.social[0].social_share" 
           :key="id+'-social'"
@@ -82,6 +82,14 @@ export default {
     }
     ul, ol {
       margin-left: 32px;
+    }
+    img {
+      max-width: 100%;
+      @media screen and (min-width: $tablet) { 
+        max-width: 90%;
+        margin: 0 auto;
+        display: flex;
+      }
     }
   }
   &__links-container {
