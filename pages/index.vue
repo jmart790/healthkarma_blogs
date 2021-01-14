@@ -3,13 +3,13 @@
     <h1 class="blog-index-page__title">Health Karma Blogs</h1>
     <!-- blogs -->
     <ul class="blog-index-page__blogs">
-      <li v-for="(blog,id) in [...blogs, ...blogs, ...blogs]" :key="id" class="blog-index-page__blog">
+      <li v-for="(blog,id) in blogPages[currentPage-1]" :key="id" class="blog-index-page__blog">
         <header class="blog-img-container">
           <img :src="handleImage(blog)" :alt="`${blog.title} image`" loading="lazy">
         </header>
         <div class="blog-content">
           <h2 class="blog-content__title">{{blog.title}}</h2>
-          <div v-html="blog.blog_copy.rich_text_editor" class="blog-content__snippet" />
+          <p class="blog-content__snippet" >{{blog.blog_summary || "A Health Karma Blog"}}</p>
           <h-button
             variant="terciary"
             class="px-0"
@@ -23,28 +23,50 @@
       </li>
     </ul>
     <!-- pagination -->
-    <Pagination />
+    <h-pagination 
+      v-if="totalPages > 1"
+      class="blog-index-page__pagination" 
+      v-model="currentPage"
+      :totalPages="totalPages"
+      :isLarge="isLargePagination"
+    />
 
   </main>
 </template>
 
 <script>
-import Pagination from '~/components/base/Pagination.vue';
-
 export default {
-	components: { Pagination },
+  name: "BlogsPage",
   async asyncData({ $axios, $config: { baseURL } }) {
-    const blogs = await $axios.$get(`${baseURL}/blogs`);
-    return {
-      blogs: blogs.data,
+    const blogs = (await $axios.$get(`${baseURL}/blogs`)).data;
+    const blogsPerPage = 8;
+    
+    let blogPages = []
+    for (let i = 0; i < blogs.length; i += blogsPerPage) {
+      let chunk = blogs.slice(i, i + blogsPerPage)
+      blogPages.push(chunk)
     }
+
+    return {
+      currentPage: 1,
+      blogPages,
+      totalPages: blogPages.length,
+      isLargePagination: false
+    }
+  },
+  created() {
+    this.paginationSizeSetup();
   },
   methods: {
     handleImage(blog) {
       if (blog.thumbnail_image) return blog.thumbnail_image.url
       else if (blog.header_image) return blog.header_image.url
       else return ''
-    } 
+    },
+    paginationSizeSetup() {
+      if (process.client && window.innerWidth >= 768)
+      this.isLargePagination = true;
+    }
   },
   head: {
     title: 'Health Karma Blogs',
@@ -82,12 +104,14 @@ export default {
     grid-template-columns: repeat(auto-fit, 335px);
     grid-gap: $spacing-s;
     margin: unset;
+    margin-bottom: 16px;
     padding: unset;
     list-style: none;
     @media screen and (min-width: $laptop) { 
       grid-template-columns: repeat(auto-fit, 308px);
       grid-row-gap: 24px;
       grid-column-gap: 20px;
+      margin-bottom: 24px;
     }
   }
   &__blog {
@@ -110,24 +134,25 @@ export default {
     .blog-content {
       padding: $spacing_s $spacing_m;
       &__title {
-        min-height: 54px;
+        height: 54px;
         font-family: $font-primary;
         font-size: 16px;
         font-weight: bold;
         line-height: 1.5;
         color: $black-light;
+        overflow: hidden;
         @media screen and (min-width: $laptop) { 
           margin-bottom: $spacing_s;
           font-size: 18px;
         }
       }
       &__snippet {
-        max-height: 75px;
+        height: 150px;
         margin-bottom: 24px;
         font-size: 14px;
         line-height: 1.43;
         color: $black-light;
-        overflow: hidden;
+        overflow: auto;
         font-family: $font-primary;
         @media screen and (min-width: $laptop) { 
           font-size: 16px;
@@ -142,6 +167,9 @@ export default {
         background: unset;
       }
     }
+  }
+  &__pagination {
+    margin: 0 auto;
   }
 }
 
