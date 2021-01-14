@@ -37,16 +37,12 @@ export default {
   },
   async asyncData({ params,  $axios, $config: {baseURL} }) {
     const blogURL = params.blog
-    console.log({params});
-    console.log('url: ', `${baseURL}/blogs/${blogURL}`);
     const blog = await $axios.$get(`${baseURL}/blogs/${blogURL}`)
       .then(({status, message, data}) =>{
         if (status === 'SUCCESS') return data
         else return {}
       })
       .catch(err => {});
-
-    // Last 3 blogs
     const recentBlogs = (await $axios.$get(`${baseURL}/blogs`)).data.slice(0,3);
 
     return {
@@ -66,9 +62,9 @@ export default {
       title: this.blog.title,
       meta: [
         {
-          hid: 'description',
-          name: 'description',
-          content: 'Home page description'
+          hid: this.blog.uid + '-description',
+          name: 'Description for ' + this.blog.seo.meta_title || 'A Health Karma Blog',
+          content: this.blog.seo.meta_description || 'Healthcare resources you can depend on'
         }
       ],
     }
@@ -118,12 +114,15 @@ export default {
     padding: 20px 40px;
     background-color: $white;
     @media screen and (min-width: $laptop) { 
-      min-width: 1025px;
+      max-width: 1025px;
       margin-top: -72px;
       margin-left: auto;
       margin-right: 36px;
       padding: 32px 24px;
       padding-bottom: 45px;
+    }
+    @media screen and (min-width: $laptop-lg) { 
+      margin-right: auto;
     }
   }
 }
