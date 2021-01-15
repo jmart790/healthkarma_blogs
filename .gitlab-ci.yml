@@ -11,7 +11,7 @@ build_app:
   script:
     - echo -e $DOT_ENV >> .env
     - npm install
-    - npm run generate
+    - npm run build
   cache:
     paths:
       - node_modules/
