@@ -1,0 +1,35 @@
+stages:
+  - build
+  - deploy
+
+# build stage
+build_app:
+  image: node:14.14.0
+  stage: build
+  only:
+    - master
+  script:
+    - echo -e $DOT_ENV >> .env
+    - npm install
+    - npm run generate
+  cache:
+    paths:
+      - node_modules/
+  artifacts:
+    paths:
+      # build folder
+      - dist/
+    expire_in: 1 hour
+
+Deploy to Prod:
+  image:
+    name: amazon/aws-cli
+    entrypoint: [""]
+  stage: deploy
+  only:
+    - master
+  #when: manual
+  script:
+    - aws configure set region us-east-1
+    - aws s3 sync --acl public-read --delete dist/ s3://$S3_PROD_BUCKET
+    - aws cloudfront create-invalidation --distribution-id $PROD_DISTRIBUTION_ID --paths '/*'
