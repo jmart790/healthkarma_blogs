@@ -21,14 +21,14 @@
 .app-header {
   z-index: 10;
   min-height: 50px;
-  padding: 8px 24px !important;
+  padding: $spacing_xs $spacing_m !important;
   background-color: $white;
   font-family: $font-primary;
   @media screen and (min-width: $tabet-lg) {
-    padding: 8px 24px;
+    padding: $spacing_xs $spacing_m;
   }
   @media screen and (min-width: $laptop) {
-    padding: 8px 36px !important;
+    padding: $spacing_xs 36px !important;
 	}
 	&__logo {
     height: 32px;
@@ -39,7 +39,7 @@
   // overwriting inherit classes
   .navbar-nav {
     .nav-link {
-      font-size: 16px;
+      font-size: $spacing_s;
       font-weight: bold;
       line-height: 29px;
       padding: 3px 2rem;

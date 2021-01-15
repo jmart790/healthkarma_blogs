@@ -85,7 +85,7 @@ export default {
 .blog-index-page {
   padding: 12px 20px;
   @media screen and (min-width: $laptop) { 
-    padding: 32px 36px;
+    padding: $spacing_l 36px;
   }
   &__title {
     font-size: 21px;
@@ -94,7 +94,7 @@ export default {
     text-align: center;
     color: $black-light;
     @media screen and (min-width: $laptop) { 
-      margin-bottom: 32px;
+      margin-bottom: $spacing_l;
       font-size: 28px;
     }
   }
@@ -104,14 +104,14 @@ export default {
     grid-template-columns: repeat(auto-fit, 335px);
     grid-gap: $spacing-s;
     margin: unset;
-    margin-bottom: 16px;
+    margin-bottom: $spacing_s;
     padding: unset;
     list-style: none;
     @media screen and (min-width: $laptop) { 
       grid-template-columns: repeat(auto-fit, 308px);
-      grid-row-gap: 24px;
+      grid-row-gap: $spacing_m;
       grid-column-gap: 20px;
-      margin-bottom: 24px;
+      margin-bottom: $spacing_m;
     }
   }
   &__blog {
@@ -136,7 +136,7 @@ export default {
       &__title {
         height: 54px;
         font-family: $font-primary;
-        font-size: 16px;
+        font-size: $spacing_s;
         font-weight: bold;
         line-height: 1.5;
         color: $black-light;
@@ -148,14 +148,14 @@ export default {
       }
       &__snippet {
         height: 150px;
-        margin-bottom: 24px;
+        margin-bottom: $spacing_m;
         font-size: 14px;
         line-height: 1.43;
         color: $black-light;
         overflow: auto;
         font-family: $font-primary;
         @media screen and (min-width: $laptop) { 
-          font-size: 16px;
+          font-size: $spacing_s;
           line-height: 24px;
           color: $gray-medium-light;
         }
