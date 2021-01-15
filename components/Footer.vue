@@ -91,9 +91,9 @@ export default {
 <style lang="scss">
 .app-footer {
   display: grid;
-  grid-gap: 16px;
+  grid-gap: $spacing_s;
   width: 100%;
-  padding: 16px 24px;
+  padding: $spacing_s $spacing_m;
   background: $secondary2;
   color: white;
   @media screen and (min-width: $tablet) {
@@ -108,7 +108,7 @@ export default {
       "copyright       .         ";
   }
   @media screen and (min-width: $laptop) { 
-    padding: 16px 36px;
+    padding: $spacing_s 36px;
   }
 
   &__invite-title {
@@ -139,11 +139,11 @@ export default {
     font-family: $font-primary;
     @media screen and (min-width: $mobile-lg) { 
       max-width: 40ch;
-      margin-right: 24px;
+      margin-right: $spacing_m;
     }
     @media screen and (min-width: $tablet) { 
       grid-area: invite-text;
-      margin-bottom: 24px;
+      margin-bottom: $spacing_m;
     }
     @media screen and (min-width: $laptop-lg) { 
       font-size: 18px;
@@ -167,7 +167,7 @@ export default {
   }
   &__invite-btn {
     min-width: unset !important;
-    padding: 0 24px !important;
+    padding: 0 $spacing_m !important;
     @media screen and (min-width: $laptop-lg) {
       min-width: 178px !important;
     }
@@ -180,7 +180,7 @@ export default {
   }
 
   &__hk-logo {
-    margin-bottom: 16px;
+    margin-bottom: $spacing_s;
     font-size: 32px;
     @media screen and (min-width: $tablet) { 
       grid-area: hk-logo;
@@ -194,7 +194,7 @@ export default {
     font-family: $font-primary;
     font-size: 14px;
     figure {
-      margin-right: 32px;
+      margin-right: $spacing_l;
     }
     figure, ul {
       margin-bottom: unset;
@@ -219,7 +219,7 @@ export default {
       justify-content: flex-end;
     }
     @media screen and (min-width: $laptop-lg) {
-      margin-bottom: 16px;
+      margin-bottom: $spacing_s;
     }
   }
   &__product {
@@ -237,10 +237,10 @@ export default {
 
   &__social-links {
     display: flex;
-    margin-bottom: 8px;
+    margin-bottom: $spacing_xs;
     li { 
       list-style: none;
-      margin-right: 16px;
+      margin-right: $spacing_s;
     }
     @media screen and (min-width: $tablet) { 
       grid-area: social-links;

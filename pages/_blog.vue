@@ -9,18 +9,18 @@
     >
       <span class="font-600">See All Blogs</span>
     </h-button>
-    <section class="blog-page__hero-container">
+    <figure class="blog-page__hero-container">
       <img v-if="blog.header_image" :src="blog.header_image.url" alt="hero image">
-    </section>
+    </figure>
     <section class="blog-page__body">
-      <RecentBlogs 
-        class="blog-page__recent-posts" 
-        :recentBlogs="recentBlogs" 
-        :formatToYearMonth="formatToYearMonth" 
-      />
       <BlogArticle 
         class="blog-page__article"
         :article="blog" 
+        :formatToYearMonth="formatToYearMonth" 
+      />
+      <RecentBlogs 
+        class="blog-page__recent-posts" 
+        :recentBlogs="recentBlogs" 
         :formatToYearMonth="formatToYearMonth" 
       />
     </section>
@@ -89,36 +89,46 @@ export default {
     }
   }
   &__hero-container {
-    max-height: 204px;
+    min-height: 204px;
+    max-height: 427px;
+    height: 100%;
+    margin-bottom: unset;
     overflow: hidden;
-    @media screen and (min-width: $laptop) { 
-      max-height: 427px;
-    }
     img {
-      height: 100%;
+      height: 204px;
       width: 100%;
+      object-fit: cover;
+      @media screen and (min-width: $laptop) { 
+        height: 100%;
+      }
     }
   }
   &__body {
-    display: flex;
+    @media screen and (min-width: $laptop) { 
+      display: flex;
+      flex-direction: row-reverse;
+    }
   }
   &__recent-posts {
-    display: none;
+    display: block;
+    padding: 20px;
     @media screen and (min-width: $laptop) { 
-      display: block;
-      padding: 32px 36px;
+      padding: $spacing_l 36px;
     }
   }
   &__article {
-    width: 100%;
-    padding: 20px 40px;
+    position: relative;
+
+    width: auto;
+    margin: -20px 20px 0 20px;
+    padding: 20px;
     background-color: $white;
     @media screen and (min-width: $laptop) { 
       max-width: 1025px;
       margin-top: -72px;
       margin-left: auto;
       margin-right: 36px;
-      padding: 32px 24px;
+      padding: $spacing_l $spacing_m;
       padding-bottom: 45px;
     }
     @media screen and (min-width: $laptop-lg) { 

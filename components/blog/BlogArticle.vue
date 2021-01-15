@@ -4,11 +4,12 @@
     <p class="blog-article__date">{{article.date_of_published_blog}}</p>
     <div class="blog-article__blurb" v-html="richText"></div>
     <div class="blog-article__links-container">
-      <h-button 
+      <!--  COMING SOON 👇🏽  -->
+      <!-- <h-button 
         variant="terciary" 
         class="blog-article__link"
       ><b>Share</b>
-      </h-button>
+      </h-button> -->
       <template v-if="article.social && article.social.length">
         <a 
           v-for="(item,id) in article.social[0].social_share" 
@@ -67,21 +68,21 @@ export default {
     line-height: 1.43;
     color: $black-light;
     @media screen and (min-width: $laptop) { 
-      margin-bottom: 32px;
+      margin-bottom: $spacing_l;
     }
   }
   &__blurb {
     max-width: 855px;
-    margin-bottom: 32px;
+    margin-bottom: $spacing_l;
     font-size: 14px;
     line-height: 1.43;
     color: $black-light;
     @media screen and (min-width: $laptop) { 
-      font-size: 16px;
+      font-size: $spacing_s;
       line-height: 24px;
     }
     ul, ol {
-      margin-left: 32px;
+      margin-left: $spacing_l;
     }
     img {
       max-width: 100%;
@@ -97,7 +98,7 @@ export default {
     align-items: center;
   }
   &__link {
-    padding: 8px;
+    padding: $spacing_xs;
     margin-right: $spacing_m;
     text-decoration: none;
   }
