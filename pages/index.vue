@@ -1,6 +1,6 @@
 <template>
   <main class="blog-index-page">
-    <h1 class="blog-index-page__title">Health Karma Blogs</h1>
+    <h1 class="blog-index-page__title">Good Karma</h1>
     <!-- blogs -->
     <ul class="blog-index-page__blogs">
       <li v-for="(blog,id) in blogPages[currentPage-1]" :key="id" class="blog-index-page__blog">

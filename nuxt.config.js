@@ -8,10 +8,10 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      {
-        rel: 'icon',
-        type: 'image/x-icon',
-        href: '/favicon.ico'
+      { 
+        rel: 'icon', 
+        type: 'image/png', 
+        href: '/favicon-16x16.png' 
       },
       {
         rel: 'stylesheet',
@@ -40,6 +40,7 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     { src: '~/plugins/hk-design.js', mode: 'client' },
+    { src: '~/plugins/vue-goodshare.js', mode: 'client' },
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
