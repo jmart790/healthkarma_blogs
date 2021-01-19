@@ -30,8 +30,7 @@ export default {
   },
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
-    // "~/assets/icomoon.css"
-    "~/assets/icomoon/style.css"
+    "~/node_modules/@medixall/hk-design-system/dist/main.css"
   ],
   /*
   ** Customize the progress-bar color
@@ -49,10 +48,8 @@ export default {
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
   ],
-
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
-    // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
     "@nuxtjs/style-resources",
     "@nuxtjs/axios",
