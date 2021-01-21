@@ -13,16 +13,6 @@ export default {
         type: 'image/png', 
         href: '/favicon-16x16.png' 
       },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Raleway:wght@200;300;400;500;600;700;800&display=swap'
-      },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700;800&display=swap'
-      }
     ],
   },
   env: {
@@ -47,15 +37,23 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
-  buildModules: [
-  ],
+  buildModules: [],
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     'bootstrap-vue/nuxt',
     "@nuxtjs/style-resources",
     "@nuxtjs/axios",
     'vue-scrollto/nuxt',
+    "nuxt-webfontloader"
   ],
+  webfontloader: {
+    google: {
+      families: [
+        "Open+Sans:200,300,400,500,600,700,800",
+        "Raleway:200,300,400,500,600,700,800"
+      ]
+    }
+  },
   publicRuntimeConfig: {
     baseURL: process.env.NUXT_ENV_BASE_URL
   },
