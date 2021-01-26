@@ -85,7 +85,7 @@ export default {
     @media screen and (min-width: $laptop) { 
       position: absolute;
       margin: 20px 38px;
-      color: $white;
+      color: $white !important;
     }
   }
   &__hero-container {

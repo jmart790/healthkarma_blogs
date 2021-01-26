@@ -110,9 +110,9 @@ export default {
   display: flex;
   align-items: center;
   &__link {
-    padding: $spacing_xs;
-    margin-right: $spacing_xs;
-    text-decoration: none;
+    padding: $spacing_xs !important;
+    margin-right: $spacing_xs !important;
+    text-decoration: none !important;
   }
   &__goodshare {
     position: absolute;
