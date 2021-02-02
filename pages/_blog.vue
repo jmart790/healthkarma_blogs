@@ -72,6 +72,11 @@ export default {
           vmid: 'og:title'
         },
         {
+          property: 'og:description',
+          content: this.blog.blog_summary,
+          vmid: 'og:description'
+        },
+        {
           property: 'og:url',
           content: this.blog.url,
           vmid: 'og:url'
@@ -85,6 +90,24 @@ export default {
           property: 'og:type',
           content: 'article',
           vmid: 'og:type'
+        },
+        // Twitter Card
+        {
+          name: 'twitter:card',
+          content: 'summary_large_image'
+        },
+        {
+          name: 'twitter:title',
+          content: this.blog.title
+        },
+        {
+          name: 'twitter:description',
+          content: this.blog.thumbnail_image.url
+        },
+        // image must be an absolute path
+        {
+          name: 'twitter:image',
+          content: this.blog.thumbnail_image.url
         },
       ],
     }
