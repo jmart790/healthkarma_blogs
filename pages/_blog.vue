@@ -68,8 +68,10 @@ export default {
         },
         {
           property: 'og:image',
-          content: this.blog.thumbnail_image.url
-        }
+          content: this.blog.thumbnail_image.url,
+          vmid: 'og:image'
+        },
+
       ],
     }
   }
