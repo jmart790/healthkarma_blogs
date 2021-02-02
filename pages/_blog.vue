@@ -67,11 +67,25 @@ export default {
           content: this.blog.seo.meta_description || 'Healthcare resources you can depend on',
         },
         {
+          property: 'og:title',
+          content: this.blog.title,
+          vmid: 'og:title'
+        },
+        {
+          property: 'og:url',
+          content: this.blog.url,
+          vmid: 'og:url'
+        },
+        {
           property: 'og:image',
           content: this.blog.thumbnail_image.url,
           vmid: 'og:image'
         },
-
+        {
+          property: 'og:type',
+          content: 'article',
+          vmid: 'og:type'
+        },
       ],
     }
   }
