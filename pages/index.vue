@@ -23,9 +23,9 @@
       </li>
     </ul>
     <!-- pagination -->
-    <h-pagination 
+    <h-pagination
       v-if="totalPages > 1"
-      class="blog-index-page__pagination" 
+      class="blog-index-page__pagination"
       v-model="currentPage"
       :totalPages="totalPages"
       :isLarge="isLargePagination"
@@ -40,7 +40,7 @@ export default {
   async asyncData({ $axios, $config: { baseURL } }) {
     const blogs = (await $axios.$get(`${baseURL}/blogs`)).data;
     const blogsPerPage = 8;
-    
+
     let blogPages = []
     for (let i = 0; i < blogs.length; i += blogsPerPage) {
       let chunk = blogs.slice(i, i + blogsPerPage)
@@ -69,7 +69,7 @@ export default {
     }
   },
   head: {
-    title: 'Health Karma Blogs',
+    title: 'For the Health of It',
     meta: [
       {
         hid: 'description',
@@ -84,7 +84,7 @@ export default {
 <style lang="scss">
 .blog-index-page {
   padding: 12px 20px;
-  @media screen and (min-width: $laptop) { 
+  @media screen and (min-width: $laptop) {
     padding: $spacing_l 36px;
   }
   &__title {
@@ -93,7 +93,7 @@ export default {
     line-height: 1.52;
     text-align: center;
     color: $black-light;
-    @media screen and (min-width: $laptop) { 
+    @media screen and (min-width: $laptop) {
       margin-bottom: $spacing_l;
       font-size: 28px;
     }
@@ -107,7 +107,7 @@ export default {
     margin-bottom: $spacing_s;
     padding: unset;
     list-style: none;
-    @media screen and (min-width: $laptop) { 
+    @media screen and (min-width: $laptop) {
       grid-template-columns: repeat(auto-fit, 308px);
       grid-row-gap: $spacing_m;
       grid-column-gap: 20px;
@@ -120,7 +120,7 @@ export default {
     width: 100%;
     background-color: $white;
     box-shadow: 0 6px 10px 0 $blue-light;
-    @media screen and (min-width: $laptop) { 
+    @media screen and (min-width: $laptop) {
       max-width: 308px;
     }
     .blog-img-container {
@@ -141,7 +141,7 @@ export default {
         line-height: 1.5;
         color: $black-light;
         overflow: hidden;
-        @media screen and (min-width: $laptop) { 
+        @media screen and (min-width: $laptop) {
           margin-bottom: $spacing_s;
           font-size: 18px;
         }
@@ -154,7 +154,7 @@ export default {
         color: $black-light;
         overflow: auto;
         font-family: $font-primary;
-        @media screen and (min-width: $laptop) { 
+        @media screen and (min-width: $laptop) {
           font-size: $spacing_s;
           line-height: 24px;
           color: $gray-medium-light;
