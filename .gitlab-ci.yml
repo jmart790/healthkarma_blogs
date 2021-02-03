@@ -34,7 +34,8 @@ Deploy to Prod:
     - chmod 600 ~/.ssh/id_rsa
     - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
   script:
-    - ssh -vvv web1@10.255.22.193:/home/web1/blog/www/
+    - ssh web1@10.255.22.193
+    - cd blog/www/
     - bash deploy.sh
 
 #
