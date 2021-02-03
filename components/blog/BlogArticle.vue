@@ -2,38 +2,21 @@
   <div class="blog-article">
     <h1 class="blog-article__title">{{article.title}}</h1>
     <p class="blog-article__date">{{article.date_of_published_blog}}</p>
-    <div class="blog-article__blurb" v-html="richText"></div>
-    <div class="blog-article__links-container">
-      <!--  COMING SOON 👇🏽  -->
-      <!-- <h-button 
-        variant="terciary" 
-        class="blog-article__link"
-      ><b>Share</b>
-      </h-button> -->
-      <template v-if="article.social && article.social.length">
-        <a 
-          v-for="(item,id) in article.social[0].social_share" 
-          :key="id+'-social'"
-          target="_blank" 
-          :href="item.link.href"
-        >
-          <h-button 
-            variant="link" 
-            :isCircle="true"
-            class="blog-article__link"
-          >
-            <h-icon 
-              :icon="`icon-brand-${item.link.title.toLowerCase()}`" 
-              size="large"/>
-          </h-button>
-        </a>
-      </template>
-    </div>
+    <div class="blog-article__blurb" v-html="richText"/>
+    <ShareWithSocials 
+      :pageTitle="article.seo.meta_title"
+      :pageDescription="article.seo.meta_description"
+    />
   </div>
 </template>
 
 <script>
+import ShareWithSocials from "~/components/blog/ShareWithSocials.vue"
+
 export default {
+  components: {
+    ShareWithSocials
+  },
   props: {
     article: {
       type: Object,
@@ -44,7 +27,7 @@ export default {
     richText() {
       if (this.article.blog_copy) return this.article.blog_copy.rich_text_editor || '';
       return ''
-    }
+    },
   },
 }
 </script>
@@ -92,15 +75,6 @@ export default {
         display: flex;
       }
     }
-  }
-  &__links-container {
-    display: flex;
-    align-items: center;
-  }
-  &__link {
-    padding: $spacing_xs;
-    margin-right: $spacing_m;
-    text-decoration: none;
   }
 }
 </style>
