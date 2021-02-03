@@ -8,21 +8,11 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      {
-        rel: 'icon',
-        type: 'image/x-icon',
-        href: '/favicon.ico'
+      { 
+        rel: 'icon', 
+        type: 'image/png', 
+        href: '/favicon-16x16.png' 
       },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Raleway:wght@200;300;400;500;600;700;800&display=swap'
-      },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700;800&display=swap'
-      }
     ],
   },
   env: {
@@ -30,8 +20,7 @@ export default {
   },
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
-    // "~/assets/icomoon.css"
-    "~/assets/icomoon/style.css"
+    "~/node_modules/@medixall/hk-design-system/dist/main.css"
   ],
   /*
   ** Customize the progress-bar color
@@ -41,23 +30,30 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     { src: '~/plugins/hk-design.js', mode: 'client' },
+    { src: '~/plugins/vue-goodshare.js', mode: 'client' },
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
-  buildModules: [
-  ],
-
+  buildModules: [],
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
-    // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
     "@nuxtjs/style-resources",
     "@nuxtjs/axios",
     'vue-scrollto/nuxt',
+    "nuxt-webfontloader"
   ],
+  webfontloader: {
+    google: {
+      families: [
+        "Open+Sans:200,300,400,500,600,700,800",
+        "Raleway:200,300,400,500,600,700,800"
+      ]
+    }
+  },
   publicRuntimeConfig: {
     baseURL: process.env.NUXT_ENV_BASE_URL
   },
