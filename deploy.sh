@@ -1,6 +1,12 @@
-#!/bin/sh
+#! /usr/bin/env sh
 export PATH=node_modules/.bin/:$PATH
 export DISABLE_NOTIFIER=true
+
+SERVERS=$(10.255.22.193)
+
+ssh web1@$SERVERS
+
+cd blog/www/
 
 START=$(date +%s)
 
