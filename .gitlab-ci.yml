@@ -35,7 +35,6 @@ Deploy to Prod:
     - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
   script:
     - ssh web1@10.255.22.193
-    - cd blog/www/
     - bash deploy.sh
 
 #
