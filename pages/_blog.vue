@@ -140,9 +140,10 @@ export default {
     img {
       height: 204px;
       width: 100%;
-      object-fit: cover;
+      object-fit: fill;
       @media screen and (min-width: $laptop) {
         height: 100%;
+        object-fit: cover;
       }
     }
   }
