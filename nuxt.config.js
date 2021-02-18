@@ -1,4 +1,6 @@
 export default {
+  ssr: false,
+  mode: "spa",
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'blogkarma_fe',
@@ -8,10 +10,10 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { 
-        rel: 'icon', 
-        type: 'image/png', 
-        href: '/favicon-16x16.png' 
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/favicon-16x16.png'
       },
     ],
   },
