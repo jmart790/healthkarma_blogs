@@ -68,12 +68,12 @@ export default {
         },
         {
           hid: 'og:title',
-          property: 'og:title',
+          name: 'og:title',
           content: this.blog.title,
         },
         {
           hid: 'og:description',
-          property: 'og:description',
+          name: 'og:description',
           content: this.blog.blog_summary,
         },
         {
