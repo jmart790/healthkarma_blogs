@@ -30,7 +30,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: "/hk_mobile_logo.png",
+        content: "./static/hk_mobile_logo.png",
       },
     ],
     link: [
