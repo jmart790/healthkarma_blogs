@@ -84,7 +84,8 @@ export default {
         {
           property: 'og:image',
           content: this.blog.thumbnail_image.url,
-          vmid: 'og:image'
+          vmid: 'og:image',
+          hid: 'og:image',
         },
         {
           property: 'og:type',
