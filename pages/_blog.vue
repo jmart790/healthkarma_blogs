@@ -67,30 +67,29 @@ export default {
           content: this.blog.seo.meta_description || 'Healthcare resources you can depend on',
         },
         {
-          property: 'og:title',
+          name: 'og:title',
           content: this.blog.title,
-          vmid: 'og:title'
+          hid: 'og:title'
         },
         {
-          property: 'og:description',
+          name: 'og:description',
           content: this.blog.blog_summary,
-          vmid: 'og:description'
+          hid: 'og:description'
         },
         {
-          property: 'og:url',
+          name: 'og:url',
           content: this.blog.url,
-          vmid: 'og:url'
+          hid: 'og:url'
         },
         {
-          property: 'og:image',
+          name: 'og:image',
           content: this.blog.thumbnail_image.url,
-          vmid: 'og:image',
           hid: 'og:image',
         },
         {
-          property: 'og:type',
+          name: 'og:type',
           content: 'article',
-          vmid: 'og:type'
+          hid: 'og:type'
         },
         // Twitter Card
         {
