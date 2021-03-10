@@ -67,29 +67,41 @@ export default {
           content: this.blog.seo.meta_description || 'Healthcare resources you can depend on',
         },
         {
-          name: 'og:title',
+          hid: 'og:title',
+          property: 'og:title',
           content: this.blog.title,
-          hid: 'og:title'
         },
         {
-          name: 'og:description',
+          hid: 'og:description',
+          property: 'og:description',
           content: this.blog.blog_summary,
-          hid: 'og:description'
         },
         {
-          name: 'og:url',
-          content: this.blog.url,
-          hid: 'og:url'
+          hid: "og:type",
+          property: "og:type",
+          content: "article",
         },
         {
-          name: 'og:image',
-          content: this.blog.thumbnail_image.url,
+          hid: 'og:url',
+          property: 'og:url',
+          content: `https://blog.healthkarma.org${this.blog.url}`,
+        },
+        {
           hid: 'og:image',
+          property: 'og:image',
+          content: this.blog.thumbnail_image.url,
         },
         {
-          name: 'og:type',
-          content: 'article',
-          hid: 'og:type'
+          property: "article:published_time",
+          content: this.blog.created_at,
+        },
+        {
+          property: "article:modified_time",
+          content: this.blog.updated_at,
+        },
+        {
+          property: "article:tag",
+          content: this.blog.tags ? this.blog.tags.toString() : "",
         },
         // Twitter Card
         {
@@ -108,6 +120,13 @@ export default {
         {
           name: 'twitter:image',
           content: this.blog.thumbnail_image.url
+        },
+      ],
+      link: [
+        {
+          hid: "canonical",
+          rel: "canonical",
+          href: `https://blog.healthkarma.org${this.blog.url}`,
         },
       ],
     }
