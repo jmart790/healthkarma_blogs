@@ -6,8 +6,9 @@ export default {
     title: 'For the Health of it',
     meta: [
       { charset: 'utf-8' },
+      { name: "HandheldFriendly", content: "True" },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'Healthcare resources you can depend on' },
       // for apps that use Open Graph
       { property: "og:site_name", content: "For The Health Of It"},
       { hid: "og:type", property: "og:type", content: "website" },
@@ -29,7 +30,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: "/assets/images/hk_mobile_logo.png",
+        content: "/hk_mobile_logo.png",
       },
     ],
     link: [
