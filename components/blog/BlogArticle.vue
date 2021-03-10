@@ -3,7 +3,6 @@
     <h1 class="blog-article__title">{{article.title}}</h1>
     <p class="blog-article__date">{{article.date_of_published_blog}}</p>
     <div class="blog-article__blurb" v-html="richText"/>
-    <h6>Let's get social</h6>
     <ShareWithSocials 
       :pageTitle="article.seo.meta_title"
       :pageDescription="article.seo.meta_description"

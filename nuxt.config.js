@@ -1,17 +1,19 @@
 export default {
+  ssr: false,
+  mode: "spa",
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'blogkarma_fe',
+    title: 'For the Health of it',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { 
-        rel: 'icon', 
-        type: 'image/png', 
-        href: '/favicon-16x16.png' 
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/favicon-16x16.png'
       },
     ],
   },

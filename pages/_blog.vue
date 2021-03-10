@@ -13,15 +13,15 @@
       <img v-if="blog.header_image" :src="blog.header_image.url" alt="hero image">
     </figure>
     <section class="blog-page__body">
-      <BlogArticle 
+      <BlogArticle
         class="blog-page__article"
-        :article="blog" 
-        :formatToYearMonth="formatToYearMonth" 
+        :article="blog"
+        :formatToYearMonth="formatToYearMonth"
       />
-      <RecentBlogs 
-        class="blog-page__recent-posts" 
-        :recentBlogs="recentBlogs" 
-        :formatToYearMonth="formatToYearMonth" 
+      <RecentBlogs
+        class="blog-page__recent-posts"
+        :recentBlogs="recentBlogs"
+        :formatToYearMonth="formatToYearMonth"
       />
     </section>
   </div>
@@ -63,9 +63,53 @@ export default {
       meta: [
         {
           hid: this.blog.uid + '-description',
-          name: 'Description for ' + this.blog.seo.meta_title || 'A Health Karma Blog',
-          content: this.blog.seo.meta_description || 'Healthcare resources you can depend on'
-        }
+          name: 'Description for ' + this.blog.seo.meta_title || 'For the Health of It',
+          content: this.blog.seo.meta_description || 'Healthcare resources you can depend on',
+        },
+        {
+          property: 'og:title',
+          content: this.blog.title,
+          vmid: 'og:title'
+        },
+        {
+          property: 'og:description',
+          content: this.blog.blog_summary,
+          vmid: 'og:description'
+        },
+        {
+          property: 'og:url',
+          content: this.blog.url,
+          vmid: 'og:url'
+        },
+        {
+          property: 'og:image',
+          content: this.blog.thumbnail_image.url,
+          vmid: 'og:image',
+          hid: 'og:image',
+        },
+        {
+          property: 'og:type',
+          content: 'article',
+          vmid: 'og:type'
+        },
+        // Twitter Card
+        {
+          name: 'twitter:card',
+          content: 'summary_large_image'
+        },
+        {
+          name: 'twitter:title',
+          content: this.blog.title
+        },
+        {
+          name: 'twitter:description',
+          content: this.blog.thumbnail_image.url
+        },
+        // image must be an absolute path
+        {
+          name: 'twitter:image',
+          content: this.blog.thumbnail_image.url
+        },
       ],
     }
   }
@@ -76,16 +120,16 @@ export default {
 .blog-page {
   height: 100%;
   padding-top: $spacing-xxs;
-  @media screen and (min-width: $laptop) { 
+  @media screen and (min-width: $laptop) {
     padding-top: unset;
   }
   &__back-link {
     margin: $spacing-xxs $spacing_s;
     margin-bottom: $spacing_xs;
-    @media screen and (min-width: $laptop) { 
+    @media screen and (min-width: $laptop) {
       position: absolute;
       margin: 20px 38px;
-      color: $white;
+      color: $white !important;
     }
   }
   &__hero-container {
@@ -97,14 +141,15 @@ export default {
     img {
       height: 204px;
       width: 100%;
-      object-fit: cover;
-      @media screen and (min-width: $laptop) { 
+      object-fit: fill;
+      @media screen and (min-width: $laptop) {
         height: 100%;
+        object-fit: cover;
       }
     }
   }
   &__body {
-    @media screen and (min-width: $laptop) { 
+    @media screen and (min-width: $laptop) {
       display: flex;
       flex-direction: row-reverse;
     }
@@ -112,7 +157,7 @@ export default {
   &__recent-posts {
     display: block;
     padding: 20px;
-    @media screen and (min-width: $laptop) { 
+    @media screen and (min-width: $laptop) {
       padding: $spacing_l 36px;
     }
   }
@@ -123,7 +168,7 @@ export default {
     margin: -20px 20px 0 20px;
     padding: 20px;
     background-color: $white;
-    @media screen and (min-width: $laptop) { 
+    @media screen and (min-width: $laptop) {
       max-width: 1025px;
       margin-top: -72px;
       margin-left: auto;
@@ -131,7 +176,7 @@ export default {
       padding: $spacing_l $spacing_m;
       padding-bottom: 45px;
     }
-    @media screen and (min-width: $laptop-lg) { 
+    @media screen and (min-width: $laptop-lg) {
       margin-right: auto;
     }
   }

@@ -27,12 +27,12 @@
       <vue-goodshare-facebook
         ref="goodshareFacebook"
         class="share-socials__goodshare"
-        title_social=""
+        :title_social="pageTitle"
         :page_url="shareUrl"
         :page_title="pageTitle"
         :page-description="pageDescription"
         :hashtag="hashtag"
-        :quote="quote"
+        :quote="pageDescription"
       />
     </h-button>
     <h-button 
@@ -94,7 +94,7 @@ export default {
   },
   computed: {
     shareUrl() {
-      return process.env.NUXT_ENV_HOST + this.$route.fullPath;
+      return 'https://blog.healthkarma.org' + this.$route.fullPath;
     }
   },
   methods: {
@@ -110,9 +110,9 @@ export default {
   display: flex;
   align-items: center;
   &__link {
-    padding: $spacing_xs;
-    margin-right: $spacing_xs;
-    text-decoration: none;
+    padding: $spacing_xs !important;
+    margin-right: $spacing_xs !important;
+    text-decoration: none !important;
   }
   &__goodshare {
     position: absolute;
