@@ -1,10 +1,10 @@
 <template>
   <div class="share-socials" >
-    <h-button 
-      variant="link" 
+    <h-button
+      variant="link"
       :isCircle="true"
       class="share-socials__link"
-      icon="icon-brand-twitter" 
+      icon="icon-brand-twitter"
       iconSize="large"
       @click="shareSocial('goodshareTwitter')"
     >
@@ -16,11 +16,11 @@
         :page_title="pageTitle"
       />
     </h-button>
-    <h-button 
-      variant="link" 
+    <h-button
+      variant="link"
       :isCircle="true"
       class="share-socials__link"
-      icon="icon-brand-facebook" 
+      icon="icon-brand-facebook"
       iconSize="large"
       @click="shareSocial('goodshareFacebook')"
     >
@@ -35,11 +35,11 @@
         :quote="pageDescription"
       />
     </h-button>
-    <h-button 
-      variant="link" 
+    <h-button
+      variant="link"
       :isCircle="true"
       class="share-socials__link"
-      icon="icon-brand-linkedin" 
+      icon="icon-brand-linkedin"
       iconSize="large"
       @click="shareSocial('goodshareLinkedin')"
     >
@@ -52,11 +52,11 @@
         :page-description="pageDescription"
       />
     </h-button>
-    <h-button 
-      variant="link" 
+    <h-button
+      variant="link"
       :isCircle="true"
       class="share-socials__link"
-      icon="icon-brand-whatsapp" 
+      icon="icon-brand-whatsapp"
       iconSize="large"
       @click="shareSocial('goodshareWhatsapp')"
     >
@@ -71,6 +71,8 @@
 </template>
 
 <script>
+import segmentEvents from "~/segmentEvents";
+
 export default {
   props: {
     pageTitle: {
@@ -99,6 +101,7 @@ export default {
   },
   methods: {
     shareSocial(socialRef) {
+      segmentEvents.blogPostShared(socialRef);
       this.$refs[socialRef].showShareWindow();
     }
   }

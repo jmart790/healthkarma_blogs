@@ -45,6 +45,9 @@ export default {
         href: "https://blog.healthkarma.org/",
       },
     ],
+    script: [
+      {src: '/segment.js'}
+    ]
   },
   env: {
     baseURL: process.env.NUXT_ENV_API_URL,
