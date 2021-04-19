@@ -35,14 +35,18 @@ export default {
   components: {
     RecentBlogs, BlogArticle
   },
-  async asyncData({ params,  $axios, $config: {baseURL} }) {
-    const blogURL = params.blog
-    const blog = await $axios.$get(`${baseURL}/blogs/${blogURL}`)
-      .then(({status, message, data}) =>{
-        if (status === 'SUCCESS') return data
-        else return {}
-      })
-      .catch(err => {});
+  async asyncData({ params, payload,  $axios, $config: {baseURL} }) {
+    let blog;
+    if (payload) blog = payload;
+    else {
+      const blogURL = params.blog
+      blog = await $axios.$get(`${baseURL}/blogs/${blogURL}`)
+        .then(({status, message, data}) =>{
+          if (status === 'SUCCESS') return data
+          else return {}
+        })
+        .catch(err => {});
+    }
     const recentBlogs = (await $axios.$get(`${baseURL}/blogs`)).data.slice(0,3);
 
     return {
