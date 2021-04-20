@@ -13,7 +13,7 @@
           <h-button
             variant="terciary"
             class="px-0"
-            @click="$router.push(blog.url)"
+            @click="selectedBlogPostHandler(blog)"
             icon="icon-navigation-linear-chevron-right"
             flipContent
           >
@@ -35,7 +35,9 @@
 </template>
 
 <script>
-export default {
+  import segmentEvents from "~/segmentEvents";
+
+  export default {
   name: "BlogsPage",
   async asyncData({ $axios, $config: { baseURL } }) {
     const blogs = (await $axios.$get(`${baseURL}/blogs`)).data;
@@ -51,7 +53,7 @@ export default {
       currentPage: 1,
       blogPages,
       totalPages: blogPages.length,
-      isLargePagination: false
+      isLargePagination: false,
     }
   },
   created() {
@@ -64,8 +66,13 @@ export default {
       else return ''
     },
     paginationSizeSetup() {
-      if (process.client && window.innerWidth >= 768)
+      if (process.client && window && window.innerWidth >= 768)
       this.isLargePagination = true;
+    },
+    selectedBlogPostHandler(postInformation) {
+      const isDevelopment = process.env.NODE_ENV === 'development';
+      if (!isDevelopment) segmentEvents.blogPostViewed(postInformation);
+      this.$router.push(postInformation.url);
     }
   },
   head: {
