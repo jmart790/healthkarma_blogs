@@ -35,10 +35,9 @@
 </template>
 
 <script>
-  import segmentEvents from "~/segmentEvents";
+import segmentEvents from "~/segmentEvents";
 
-  export default {
-  name: "BlogsPage",
+export default {
   async asyncData({ $axios, $config: { baseURL } }) {
     const blogs = (await $axios.$get(`${baseURL}/blogs`)).data;
     const blogsPerPage = 8;
