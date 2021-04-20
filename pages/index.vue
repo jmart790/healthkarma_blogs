@@ -66,7 +66,7 @@
       else return ''
     },
     paginationSizeSetup() {
-      if (process.client && window && window.innerWidth >= 768)
+      if (process.browser && window && window.innerWidth >= 768)
       this.isLargePagination = true;
     },
     selectedBlogPostHandler(postInformation) {
