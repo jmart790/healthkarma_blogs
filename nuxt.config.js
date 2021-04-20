@@ -5,7 +5,7 @@ export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   generate: {
     async routes() {
-      return await axios.get(`http://healthkarmabe:8888/api/v1/blogs`).then(res => {
+      return await axios.get(`${process.env.NUXT_ENV_API_URL}/blogs`).then(res => {
         return res.data.data.map(blog => {
           return {
             route: blog.url,
@@ -97,7 +97,7 @@ export default {
   sitemap: {
     hostname: 'https://blog.healthkarma.org/',
     routes: async () => {
-      return await axios.get(`http://healthkarmabe:8888/api/v1/blogs`).then(res => {
+      return await axios.get(`${process.env.NUXT_ENV_API_URL}/blogs`).then(res => {
         return res.data.data.map(blog => {
           return {
             route: blog.url,
