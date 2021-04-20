@@ -63,12 +63,12 @@ export default {
   },
   head() {
     return {
-      title: this.blog.title,
+      title: `For the Health of It | ${this.blog.title}`,
       meta: [
         {
-          hid: this.blog.uid + '-description',
-          name: 'Description for ' + this.blog.seo.meta_title || 'For the Health of It',
-          content: this.blog.seo.meta_description || 'Healthcare resources you can depend on',
+          hid: 'description',
+          name: 'description',
+          content: this.blog.seo.meta_description,
         },
         {
           hid: 'og:title',
@@ -80,11 +80,11 @@ export default {
           name: 'og:description',
           content: this.blog.blog_summary,
         },
-        {
-          hid: "og:type",
-          property: "og:type",
-          content: "article",
-        },
+        // {
+        //   hid: "og:type",
+        //   property: "og:type",
+        //   content: "article",
+        // },
         {
           hid: 'og:url',
           property: 'og:url',
