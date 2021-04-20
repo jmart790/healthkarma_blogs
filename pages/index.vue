@@ -53,7 +53,7 @@
       currentPage: 1,
       blogPages,
       totalPages: blogPages.length,
-      isLargePagination: false
+      isLargePagination: false,
     }
   },
   created() {
@@ -66,12 +66,13 @@
       else return ''
     },
     paginationSizeSetup() {
-      if (process.client && window.innerWidth >= 768)
+      if (process.client && window && window.innerWidth >= 768)
       this.isLargePagination = true;
     },
     selectedBlogPostHandler(postInformation) {
-      segmentEvents.blogPostViewed(postInformation)
-      this.$router.push(postInformation.url)
+      const isDevelopment = process.env.NODE_ENV === 'development';
+      if (!isDevelopment) segmentEvents.blogPostViewed(postInformation);
+      this.$router.push(postInformation.url);
     }
   },
   head: {
