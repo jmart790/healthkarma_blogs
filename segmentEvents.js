@@ -7,7 +7,7 @@ export default {
    */
   identifyUser(payload = {}) {
     let userId = JSON.parse(localStorage.getItem("user"));
-    if (userId) {
+    if (userId && window) {
       window.analytics.identify(userId.user_id, payload);
     }
   },
@@ -16,10 +16,12 @@ export default {
    * Track blog post viewed
    */
   blogPostViewed(articleInformation) {
-    window.analytics.track("Blog Post Viewed", {
-      article_title: articleInformation.blog_title,
-      article_category: articleInformation.tags,
-    })
+    if (window) {
+      window.analytics.track("Blog Post Viewed", {
+        article_title: articleInformation.blog_title,
+        article_category: articleInformation.tags,
+      })
+    }
   },
 
   /**
@@ -27,9 +29,11 @@ export default {
    */
   blogPostShared(articleInformation) {
     let shareOption = articleInformation.replace('goodshare','');
-    window.analytics.track("Blog Post Shared", {
-      article_share_option: shareOption,
-    })
+    if (window) {
+      window.analytics.track("Blog Post Shared", {
+        article_share_option: shareOption,
+      })
+    }
   },
 
 }
