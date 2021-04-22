@@ -35,14 +35,18 @@ export default {
   components: {
     RecentBlogs, BlogArticle
   },
-  async asyncData({ params,  $axios, $config: {baseURL} }) {
-    const blogURL = params.blog
-    const blog = await $axios.$get(`${baseURL}/blogs/${blogURL}`)
-      .then(({status, message, data}) =>{
-        if (status === 'SUCCESS') return data
-        else return {}
-      })
-      .catch(err => {});
+  async asyncData({ params, payload,  $axios, $config: {baseURL} }) {
+    let blog;
+    if (payload) blog = payload;
+    else {
+      const blogURL = params.blog
+      blog = await $axios.$get(`${baseURL}/blogs/${blogURL}`)
+        .then(({status, message, data}) =>{
+          if (status === 'SUCCESS') return data
+          else return {}
+        })
+        .catch(err => {});
+    }
     const recentBlogs = (await $axios.$get(`${baseURL}/blogs`)).data.slice(0,3);
 
     return {
@@ -59,12 +63,12 @@ export default {
   },
   head() {
     return {
-      title: this.blog.title,
+      title: `For the Health of It | ${this.blog.title}`,
       meta: [
         {
-          hid: this.blog.uid + '-description',
-          name: 'Description for ' + this.blog.seo.meta_title || 'For the Health of It',
-          content: this.blog.seo.meta_description || 'Healthcare resources you can depend on',
+          hid: 'description',
+          name: 'description',
+          content: this.blog.seo.meta_description,
         },
         {
           hid: 'og:title',
@@ -76,11 +80,11 @@ export default {
           name: 'og:description',
           content: this.blog.blog_summary,
         },
-        {
-          hid: "og:type",
-          property: "og:type",
-          content: "article",
-        },
+        // {
+        //   hid: "og:type",
+        //   property: "og:type",
+        //   content: "article",
+        // },
         {
           hid: 'og:url',
           property: 'og:url',

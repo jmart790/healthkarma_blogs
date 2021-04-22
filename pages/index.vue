@@ -35,10 +35,9 @@
 </template>
 
 <script>
-  import segmentEvents from "~/segmentEvents";
+import segmentEvents from "~/segmentEvents";
 
-  export default {
-  name: "BlogsPage",
+export default {
   async asyncData({ $axios, $config: { baseURL } }) {
     const blogs = (await $axios.$get(`${baseURL}/blogs`)).data;
     const blogsPerPage = 9;
@@ -53,7 +52,7 @@
       currentPage: 1,
       blogPages,
       totalPages: blogPages.length,
-      isLargePagination: false
+      isLargePagination: false,
     }
   },
   created() {
@@ -66,12 +65,13 @@
       else return ''
     },
     paginationSizeSetup() {
-      if (process.client && window.innerWidth >= 768)
+      if (process.browser && window && window.innerWidth >= 768)
       this.isLargePagination = true;
     },
     selectedBlogPostHandler(postInformation) {
-      segmentEvents.blogPostViewed(postInformation)
-      this.$router.push(postInformation.url)
+      const isDevelopment = process.env.NODE_ENV === 'development';
+      if (!isDevelopment) segmentEvents.blogPostViewed(postInformation);
+      this.$router.push(postInformation.url);
     }
   },
   head: {
@@ -94,14 +94,30 @@
     padding: $spacing_l 36px;
   }
   &__title {
-    font-size: 21px;
-    font-weight: bold;
-    line-height: 1.52;
-    text-align: center;
-    color: $black-light;
-    @media screen and (min-width: $laptop) {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: $spacing_m;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #202656;
+    @media screen and (min-width: $tablet) { 
+      font-size: 48px;
       margin-bottom: $spacing_l;
-      font-size: 28px;
+    }
+    @media screen and (min-width: $laptop) {
+      margin-bottom: $spacing_xl;
+      font-size: 80px;
+    }
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: 40%;
+      content: '';
+      height: 2px;
+      width: 25%;
+      background-color: #d12383;
     }
   }
   &__blogs {

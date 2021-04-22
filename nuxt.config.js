@@ -1,7 +1,20 @@
+const axios = require('axios')
+
 export default {
-  ssr: false,
-  mode: "spa",
+  target: 'static',
   // Global page headers (https://go.nuxtjs.dev/config-head)
+  generate: {
+    async routes() {
+      return await axios.get(`${process.env.NUXT_ENV_API_URL}/blogs`).then(res => {
+        return res.data.data.map(blog => {
+          return {
+            route: blog.url,
+            payload: blog
+          }
+        })
+      })
+    }
+  },
   head: {
     title: 'For the Health of it',
     meta: [
@@ -9,7 +22,6 @@ export default {
       { name: "HandheldFriendly", content: "True" },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Healthcare resources you can depend on' },
-      // for apps that use Open Graph
       { property: "og:site_name", content: "For The Health Of It"},
       { hid: "og:type", property: "og:type", content: "website" },
       {
@@ -30,7 +42,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: "./static/hk_mobile_logo.png",
+        content: "hk_mobile_logo.png",
       },
     ],
     link: [
@@ -78,8 +90,21 @@ export default {
     "@nuxtjs/style-resources",
     "@nuxtjs/axios",
     'vue-scrollto/nuxt',
-    "nuxt-webfontloader"
+    "nuxt-webfontloader",
+    '@nuxtjs/sitemap',
   ],
+  sitemap: {
+    hostname: 'https://blog.healthkarma.org/',
+    routes: async () => {
+      return await axios.get(`${process.env.NUXT_ENV_API_URL}/blogs`).then(res => {
+        return res.data.data.map(blog => {
+          return {
+            route: blog.url,
+          }
+        })
+      })
+    }
+  },
   webfontloader: {
     google: {
       families: [
@@ -89,7 +114,7 @@ export default {
     }
   },
   publicRuntimeConfig: {
-    baseURL: process.env.NUXT_ENV_BASE_URL
+    baseURL: process.env.NUXT_ENV_API_URL
   },
   styleResources: {
     scss: [
