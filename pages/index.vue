@@ -41,7 +41,7 @@
   name: "BlogsPage",
   async asyncData({ $axios, $config: { baseURL } }) {
     const blogs = (await $axios.$get(`${baseURL}/blogs`)).data;
-    const blogsPerPage = 8;
+    const blogsPerPage = 9;
 
     let blogPages = []
     for (let i = 0; i < blogs.length; i += blogsPerPage) {
