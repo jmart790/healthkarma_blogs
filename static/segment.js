@@ -25,7 +25,7 @@ if (process.browser) {
         };
         for (var e=0;e<analytics.methods.length;e++) {
           var key = analytics.methods[e];
-          analytics[key] = analytics.factory(key) 
+          analytics[key] = analytics.factory(key)
         }
         analytics.load = function(key,e) {
           var t=document.createElement("script");
@@ -36,11 +36,11 @@ if (process.browser) {
           n.parentNode.insertBefore(t,n);
           analytics._loadOptions=e
         };
-        analytics._writeKey="eeDmNd9YF7kvAPojLJjEjJSgR1Sr9s2T";
+        analytics._writeKey="H8k65O8arjEmEBhevWXm6wsoFus9A3DZT";
         analytics.SNIPPET_VERSION="4.13.2";
       }
     }
-    analytics.load("eeDmNd9YF7kvAPojLJjEjJSgR1Sr9s2T");
+    analytics.load("H8k65O8arjEmEBhevWXm6wsoFus9A3DZT");
     analytics.page();
   }();
 }
