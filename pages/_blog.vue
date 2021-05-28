@@ -96,6 +96,11 @@ export default {
           content: this.blog.thumbnail_image.url,
         },
         {
+          hid: 'og:image:alt',
+          property: 'og:image:alt',
+          content: this.blog.title
+        },
+        {
           property: "article:published_time",
           content: this.blog.created_at,
         },
@@ -109,21 +114,30 @@ export default {
         },
         // Twitter Card
         {
+          hid: 'twitter:card',
           name: 'twitter:card',
           content: 'summary_large_image'
         },
         {
+          hid: 'twitter:title',
           name: 'twitter:title',
           content: this.blog.title
         },
         {
+          hid: 'twitter:description',
           name: 'twitter:description',
           content: this.blog.thumbnail_image.url
         },
         // image must be an absolute path
         {
+          hid: 'twitter:image',
           name: 'twitter:image',
           content: this.blog.thumbnail_image.url
+        },
+        {
+          hid: 'twitter:image:alt',
+          name: 'twitter:image:alt',
+          content: this.blog.title
         },
       ],
       link: [
