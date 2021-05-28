@@ -101,6 +101,16 @@ export default {
           content: this.blog.thumbnail_image.url
         },
         {
+          hid: 'og:image:width',
+          property: 'og:image:width',
+          content: '1200'
+        },
+        {
+          hid: 'og:image:height',
+          property: 'og:image:height',
+          content: '630'
+        },
+        {
           property: "article:published_time",
           content: this.blog.created_at,
         },
@@ -111,12 +121,6 @@ export default {
         {
           property: "article:tag",
           content: this.blog.tags ? this.blog.tags.toString() : "",
-        },
-        // Twitter Card
-        {
-          hid: 'twitter:card',
-          name: 'twitter:card',
-          content: 'summary'
         },
         {
           hid: 'twitter:title',
@@ -138,6 +142,11 @@ export default {
           hid: 'twitter:image:alt',
           name: 'twitter:image:alt',
           content: this.blog.title
+        },
+        {
+          hid: 'twitter:card',
+          name: 'twitter:card',
+          content: 'summary_large_image'
         },
       ],
       link: [
