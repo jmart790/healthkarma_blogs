@@ -98,7 +98,7 @@ export default {
         {
           hid: 'og:image:alt',
           property: 'og:image:alt',
-          content: this.blog.title
+          content: this.blog.thumbnail_image.url
         },
         {
           property: "article:published_time",
@@ -116,7 +116,7 @@ export default {
         {
           hid: 'twitter:card',
           name: 'twitter:card',
-          content: 'summary_large_image'
+          content: 'summary'
         },
         {
           hid: 'twitter:title',
