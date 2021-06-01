@@ -107,7 +107,7 @@ export default {
         {
           hid: 'twitter:description',
           name: 'twitter:description',
-          content: this.blog.thumbnail_image.url
+          content: this.blog.blog_summary
         },
         // image must be an absolute path
         {
