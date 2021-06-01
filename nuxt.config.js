@@ -30,11 +30,6 @@ export default {
         type: 'image/png',
         href: '/favicon-16x16.png'
       },
-      {
-        hid: "canonical",
-        rel: "canonical",
-        href: "https://blog.healthkarma.org/",
-      },
     ],
     script: [
       {src: '/segment.js'}

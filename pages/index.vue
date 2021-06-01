@@ -102,6 +102,13 @@ export default {
         content: "hk_mobile_logo.png",
       },
     ],
+    link: [
+      {
+        hid: "canonical",
+        rel: "canonical",
+        href: "https://blog.healthkarma.org/",
+      },
+    ],
   }
 }
 </script>

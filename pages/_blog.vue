@@ -100,11 +100,6 @@ export default {
           property: 'og:image',
           content: this.blog.thumbnail_image.url,
         },
-        {
-          hid: 'og:image:alt',
-          property: 'og:image:alt',
-          content: this.blog.thumbnail_image.url
-        },
         { property: 'og:image:width', content: '740'},
         { property: 'og:image:height', content: '300'},
         { property: "article:published_time", content: this.blog.created_at,},
@@ -132,6 +127,13 @@ export default {
           hid: "twitter:url",
           name: "twitter:url",
           content: `https://blog.healthkarma.org${this.blog.url}`,
+        },
+      ],
+      link: [
+        {
+          hid: "canonical",
+          rel: "canonical",
+          href: `https://blog.healthkarma.org${this.blog.url}`,
         },
       ],
     }
