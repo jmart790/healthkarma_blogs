@@ -86,11 +86,6 @@ export default {
           content: this.blog.blog_summary,
         },
         {
-          hid: "og:type",
-          property: "og:type",
-          content: "article",
-        },
-        {
           hid: 'og:url',
           property: 'og:url',
           content: `https://blog.healthkarma.org${this.blog.url}`,
