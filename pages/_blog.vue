@@ -83,7 +83,7 @@ export default {
         {
           hid: "og:type",
           property: "og:type",
-          content: "website",
+          content: "article",
         },
         {
           hid: 'og:url',
@@ -102,11 +102,11 @@ export default {
         },
         {
           property: 'og:image:width',
-          content: '1200'
+          content: '740'
         },
         {
           property: 'og:image:height',
-          content: '630'
+          content: '300'
         },
         {
           property: "article:published_time",
@@ -119,6 +119,11 @@ export default {
         {
           property: "article:tag",
           content: this.blog.tags ? this.blog.tags.toString() : "",
+        },
+        { name: "twitter:site", content: "@HealthKarmaApp" },
+        {
+          name: 'twitter:card',
+          content: 'summary_large_image'
         },
         {
           hid: 'twitter:title',
@@ -137,14 +142,14 @@ export default {
           content: this.blog.thumbnail_image.url
         },
         {
+          hid: "twitter:url",
+          name: "twitter:url",
+          content: `https://blog.healthkarma.org${this.blog.url}`,
+        },
+        {
           hid: 'twitter:image:alt',
           name: 'twitter:image:alt',
           content: this.blog.title
-        },
-        {
-          hid: 'twitter:card',
-          name: 'twitter:card',
-          content: 'summary_large_image'
         },
       ],
       link: [
