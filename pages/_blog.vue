@@ -35,6 +35,23 @@ export default {
   components: {
     RecentBlogs, BlogArticle
   },
+  computed: {
+    title() {
+      if (this.blog) return this.blog.title;
+    },
+    description() {
+      if (this.blog) return this.blog.seo.meta_description;
+    },
+    image(){
+      if (this.blog) return this.blog.thumbnail_image.url;
+    },
+    summary() {
+      if (this.blog) return this.blog.blog_summary;
+    },
+    url() {
+      if (this.blog)  return `https://blog.healthkarma.org${this.blog.url}`;
+    }
+  },
   async asyncData({ params, payload,  $axios, $config: {baseURL} }) {
     let blog;
     if (payload) blog = payload;
@@ -64,22 +81,22 @@ export default {
   head() {
     if (this.blog) {
       return {
-        title: `For the Health of It | ${this.blog.title}`,
+        title: `For the Health of It | ${this.title}`,
         meta: [
           {
             hid: 'description',
             name: 'description',
-            content: this.blog.seo.meta_description,
+            content: this.description,
           },
           {
             hid: 'og:url',
             property: 'og:url',
-            content: `https://blog.healthkarma.org${this.blog.url}`,
+            content: this.url,
           },
           {
             hid: 'og:title',
             property: 'og:title',
-            content: this.blog.title,
+            content: this.title,
           },
           {
             hid: 'og:description',
@@ -91,37 +108,37 @@ export default {
             property: 'og:image',
             content: this.blog.thumbnail_image.url,
           },
-          {property: "article:published_time", content: this.blog.created_at,},
-          {property: "article:modified_time", content: this.blog.updated_at,},
-          {property: "article:tag", content: this.blog.tags ? this.blog.tags.toString() : "",},
+          // {property: "article:published_time", content: this.blog.created_at,},
+          // {property: "article:modified_time", content: this.blog.updated_at,},
+          // {property: "article:tag", content: this.blog.tags ? this.blog.tags.toString() : "",},
           {name: 'twitter:card', content: 'summary_large_image'},
           {
             hid: "twitter:url",
             name: "twitter:url",
-            content: `https://blog.healthkarma.org${this.blog.url}`,
+            content: this.url,
           },
           {
             hid: 'twitter:title',
             name: 'twitter:title',
-            content: this.blog.title
+            content: this.title
           },
           {
             hid: 'twitter:description',
             name: 'twitter:description',
-            content: this.blog.blog_summary
+            content: this.summary
           },
           // image must be an absolute path
           {
             hid: 'twitter:image',
             name: 'twitter:image',
-            content: this.blog.thumbnail_image.url
+            content: this.url
           },
         ],
         link: [
           {
             hid: "canonical",
             rel: "canonical",
-            href: `https://blog.healthkarma.org${this.blog.url}`,
+            href: this.url,
           },
         ],
       }
