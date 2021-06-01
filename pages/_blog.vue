@@ -91,6 +91,11 @@ export default {
           content: `https://blog.healthkarma.org${this.blog.url}`,
         },
         {
+          hid: 'og:image:type',
+          property: 'og:image:type',
+          content: "image/jpeg"
+        },
+        {
           hid: 'og:image',
           property: 'og:image',
           content: this.blog.thumbnail_image.url,
