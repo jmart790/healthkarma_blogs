@@ -77,19 +77,9 @@ export default {
     title: 'For the Health of It',
     meta: [
       {
-        hid: 'og:url',
-        property: 'og:url',
-        content: "https://blog.healthkarma.org/",
-      },
-      {
         hid: 'og:title',
         property: 'og:title',
         content: "For the Health of it",
-      },
-      {
-        hid: 'og:description',
-        property: 'og:description',
-        content: 'Healthcare resources you can depend on',
       },
       {
         hid: 'og:image',

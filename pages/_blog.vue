@@ -101,12 +101,12 @@ export default {
           {
             hid: 'og:description',
             property: 'og:description',
-            content: this.blog.blog_summary,
+            content: this.summary,
           },
           {
             hid: 'og:image',
             property: 'og:image',
-            content: this.blog.thumbnail_image.url,
+            content: this.image,
           },
           // {property: "article:published_time", content: this.blog.created_at,},
           // {property: "article:modified_time", content: this.blog.updated_at,},
@@ -131,7 +131,7 @@ export default {
           {
             hid: 'twitter:image',
             name: 'twitter:image',
-            content: this.url
+            content: this.image
           },
         ],
         link: [
