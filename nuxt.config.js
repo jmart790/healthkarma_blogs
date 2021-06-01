@@ -1,8 +1,8 @@
 const axios = require('axios')
 
 export default {
-  ssr: false,
-  mode: "spa",
+  // ssr: false,
+  // mode: "spa",
   // Global page headers (https://go.nuxtjs.dev/config-head)
   generate: {
     async routes() {
