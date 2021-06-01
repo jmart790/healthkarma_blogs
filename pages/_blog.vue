@@ -66,14 +66,14 @@ export default {
       title: `For the Health of It | ${this.blog.title}`,
       meta: [
         {
-          hid: 'og:title',
-          property: 'og:title',
-          content: this.blog.title,
-        },
-        {
           hid: 'description',
           name: 'description',
           content: this.blog.seo.meta_description,
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: `https://blog.healthkarma.org${this.blog.url}`,
         },
         {
           hid: 'og:title',
@@ -86,27 +86,19 @@ export default {
           content: this.blog.blog_summary,
         },
         {
-          hid: 'og:url',
-          property: 'og:url',
-          content: `https://blog.healthkarma.org${this.blog.url}`,
-        },
-        {
-          hid: 'og:image:type',
-          property: 'og:image:type',
-          content: "image/jpeg"
-        },
-        {
           hid: 'og:image',
           property: 'og:image',
           content: this.blog.thumbnail_image.url,
         },
-        { property: 'og:image:width', content: '740'},
-        { property: 'og:image:height', content: '300'},
         { property: "article:published_time", content: this.blog.created_at,},
         { property: "article:modified_time", content: this.blog.updated_at,},
         { property: "article:tag", content: this.blog.tags ? this.blog.tags.toString() : "",},
-        { name: "twitter:site", content: "@HealthKarmaApp" },
         { name: 'twitter:card', content: 'summary_large_image'},
+        {
+          hid: "twitter:url",
+          name: "twitter:url",
+          content: `https://blog.healthkarma.org${this.blog.url}`,
+        },
         {
           hid: 'twitter:title',
           name: 'twitter:title',
@@ -122,11 +114,6 @@ export default {
           hid: 'twitter:image',
           name: 'twitter:image',
           content: this.blog.thumbnail_image.url
-        },
-        {
-          hid: "twitter:url",
-          name: "twitter:url",
-          content: `https://blog.healthkarma.org${this.blog.url}`,
         },
       ],
       link: [
