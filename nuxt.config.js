@@ -24,22 +24,7 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Healthcare resources you can depend on' },
       { property: "og:site_name", content: "For The Health Of It"},
-      { hid: "og:type", property: "og:type", content: "website" },
-      {
-        hid: 'og:url',
-        property: 'og:url',
-        content: "https://blog.healthkarma.org/",
-      },
-      {
-        hid: 'og:title',
-        property: 'og:title',
-        content: "For the Health of it",
-      },
-      {
-        hid: 'og:description',
-        property: 'og:description',
-        content: 'Healthcare resources you can depend on',
-      },
+      { hid: "og:type", property: "og:type", content: "article" },
     ],
     link: [
       {
