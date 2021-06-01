@@ -72,19 +72,19 @@ export default {
         },
         {
           hid: 'og:title',
-          name: 'og:title',
+          property: 'og:title',
           content: this.blog.title,
         },
         {
           hid: 'og:description',
-          name: 'og:description',
+          property: 'og:description',
           content: this.blog.blog_summary,
         },
-        // {
-        //   hid: "og:type",
-        //   property: "og:type",
-        //   content: "article",
-        // },
+        {
+          hid: "og:type",
+          property: "og:type",
+          content: "website",
+        },
         {
           hid: 'og:url',
           property: 'og:url',
@@ -101,12 +101,10 @@ export default {
           content: this.blog.thumbnail_image.url
         },
         {
-          hid: 'og:image:width',
           property: 'og:image:width',
           content: '1200'
         },
         {
-          hid: 'og:image:height',
           property: 'og:image:height',
           content: '630'
         },
