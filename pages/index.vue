@@ -96,6 +96,11 @@ export default {
         property: 'og:description',
         content: 'Healthcare resources you can depend on',
       },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: "hk_mobile_logo.png",
+      },
     ],
   }
 }
