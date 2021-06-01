@@ -66,6 +66,11 @@ export default {
       title: `For the Health of It | ${this.blog.title}`,
       meta: [
         {
+          hid: 'og:title',
+          property: 'og:title',
+          content: this.blog.title,
+        },
+        {
           hid: 'description',
           name: 'description',
           content: this.blog.seo.meta_description,
@@ -100,31 +105,13 @@ export default {
           property: 'og:image:alt',
           content: this.blog.thumbnail_image.url
         },
-        {
-          property: 'og:image:width',
-          content: '740'
-        },
-        {
-          property: 'og:image:height',
-          content: '300'
-        },
-        {
-          property: "article:published_time",
-          content: this.blog.created_at,
-        },
-        {
-          property: "article:modified_time",
-          content: this.blog.updated_at,
-        },
-        {
-          property: "article:tag",
-          content: this.blog.tags ? this.blog.tags.toString() : "",
-        },
+        { property: 'og:image:width', content: '740'},
+        { property: 'og:image:height', content: '300'},
+        { property: "article:published_time", content: this.blog.created_at,},
+        { property: "article:modified_time", content: this.blog.updated_at,},
+        { property: "article:tag", content: this.blog.tags ? this.blog.tags.toString() : "",},
         { name: "twitter:site", content: "@HealthKarmaApp" },
-        {
-          name: 'twitter:card',
-          content: 'summary_large_image'
-        },
+        { name: 'twitter:card', content: 'summary_large_image'},
         {
           hid: 'twitter:title',
           name: 'twitter:title',
@@ -146,17 +133,12 @@ export default {
           name: "twitter:url",
           content: `https://blog.healthkarma.org${this.blog.url}`,
         },
-        {
-          hid: 'twitter:image:alt',
-          name: 'twitter:image:alt',
-          content: this.blog.title
-        },
       ],
       link: [
         {
           hid: "canonical",
           rel: "canonical",
-          href: `https://blog.healthkarma.org${this.blog.url}`,
+          href: 'https://blog.healthkarma.org',
         },
       ],
     }
