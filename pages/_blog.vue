@@ -134,13 +134,6 @@ export default {
           content: `https://blog.healthkarma.org${this.blog.url}`,
         },
       ],
-      link: [
-        {
-          hid: "canonical",
-          rel: "canonical",
-          href: 'https://blog.healthkarma.org',
-        },
-      ],
     }
   }
 }
