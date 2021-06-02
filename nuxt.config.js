@@ -1,6 +1,7 @@
 const axios = require('axios')
 
 export default {
+  target:'static',
   // Global page headers (https://go.nuxtjs.dev/config-head)
   generate: {
     async routes() {
@@ -15,11 +16,8 @@ export default {
     }
   },
   head: {
+    htmlAttrs: {lang: 'en'},
     title: 'For the Health of it',
-    htmlAttrs: {
-      lang: 'en',
-      amp: true
-    },
     meta: [
       { charset: 'utf-8' },
       { name: "HandheldFriendly", content: "True" },
@@ -29,63 +27,63 @@ export default {
         name: 'description',
         content: 'Healthcare resources you can depend on'
       },
-      {
-        hid: 'twitter:card',
-        name: 'twitter:card',
-        content: 'summary_large_image'
-      },
-      {
-        hid: 'twitter:site',
-        name: 'twitter:site',
-        content: '@HealthKarmaApp'
-      },
-      {
-        hid: 'twitter:url',
-        name: 'twitter:url',
-        content: 'https://blog.healthkarma.org'
-      },
-      {
-        hid: 'twitter:title',
-        name: 'twitter:title',
-        content: 'For the Health of it'
-      },
-      {
-        hid: 'twitter:description',
-        name: 'twitter:description',
-        content: 'Healthcare resources you can depend on'
-      },
-      {
-        hid: 'twitter:image',
-        name: 'twitter:image',
-        content: 'hk_mobile_logo.png'
-      },
-      { hid: 'og:site_name', property: 'og:site_name', content: 'For the Health of it' },
-      { hid: 'og:type', property: 'og:type', content: 'website' },
-      {
-        hid: 'og:url',
-        property: 'og:url',
-        content: 'https://blog.healthkarma.org'
-      },
-      {
-        hid: 'og:title',
-        property: 'og:title',
-        content: 'For the Health of it'
-      },
-      {
-        hid: 'og:description',
-        property: 'og:description',
-        content: 'Healthcare resources you can depend on'
-      },
-      {
-        hid: 'og:image',
-        property: 'og:image',
-        content: 'hk_mobile_logo.png'
-      },
-      {
-        hid: 'og:image:secure_url',
-        property: 'og:image:secure_url',
-        content: 'hk_mobile_logo.pngg'
-      },
+      // {
+      //   hid: 'twitter:card',
+      //   name: 'twitter:card',
+      //   content: 'summary_large_image'
+      // },
+      // {
+      //   hid: 'twitter:site',
+      //   name: 'twitter:site',
+      //   content: '@HealthKarmaApp'
+      // },
+      // {
+      //   hid: 'twitter:url',
+      //   name: 'twitter:url',
+      //   content: 'https://blog.healthkarma.org'
+      // },
+      // {
+      //   hid: 'twitter:title',
+      //   name: 'twitter:title',
+      //   content: 'For the Health of it'
+      // },
+      // {
+      //   hid: 'twitter:description',
+      //   name: 'twitter:description',
+      //   content: 'Healthcare resources you can depend on'
+      // },
+      // {
+      //   hid: 'twitter:image',
+      //   name: 'twitter:image',
+      //   content: 'hk_mobile_logo.png'
+      // },
+      // { hid: 'og:site_name', property: 'og:site_name', content: 'For the Health of it' },
+      // { hid: 'og:type', property: 'og:type', content: 'website' },
+      // {
+      //   hid: 'og:url',
+      //   property: 'og:url',
+      //   content: 'https://blog.healthkarma.org'
+      // },
+      // {
+      //   hid: 'og:title',
+      //   property: 'og:title',
+      //   content: 'For the Health of it'
+      // },
+      // {
+      //   hid: 'og:description',
+      //   property: 'og:description',
+      //   content: 'Healthcare resources you can depend on'
+      // },
+      // {
+      //   hid: 'og:image',
+      //   property: 'og:image',
+      //   content: 'hk_mobile_logo.png'
+      // },
+      // {
+      //   hid: 'og:image:secure_url',
+      //   property: 'og:image:secure_url',
+      //   content: 'hk_mobile_logo.pngg'
+      // },
     ],
     link: [
       {
@@ -160,7 +158,12 @@ export default {
       "~/assets/scss/main.scss",
     ]
   },
-
+  vue: {
+    config: {
+      productionTip: false,
+      devtools: true
+    }
+  },
   // allows to edit css in console without page breaking
   loaders: {
     scss: { sourceMap: false }
