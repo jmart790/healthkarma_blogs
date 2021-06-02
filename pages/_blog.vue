@@ -110,6 +110,7 @@ export default {
           property: 'og:image',
           content: this.image,
         },
+        {property: "article:tag", content: this.blog.tags ? this.blog.tags.toString() : "",},
         {
           hid: "twitter:url",
           name: "twitter:url",
