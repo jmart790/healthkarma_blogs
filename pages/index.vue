@@ -73,23 +73,23 @@ export default {
      this.$router.push(postInformation.url);
     }
   },
-  head: {
-    title: 'For the Health of It',
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'Healthcare resources you can depend on'
-      }
-    ],
-    link: [
-      {
-        hid: "canonical",
-        rel: "canonical",
-        href: "https://blog.healthkarma.org/",
-      },
-    ],
-  }
+  // head: {
+  //   title: 'For the Health of It',
+  //   meta: [
+  //     {
+  //       hid: 'description',
+  //       name: 'description',
+  //       content: 'Healthcare resources you can depend on'
+  //     }
+  //   ],
+  //   link: [
+  //     {
+  //       hid: "canonical",
+  //       rel: "canonical",
+  //       href: "https://blog.healthkarma.org/",
+  //     },
+  //   ],
+  // }
 }
 </script>
 
