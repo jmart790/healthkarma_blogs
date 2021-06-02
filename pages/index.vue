@@ -77,15 +77,10 @@ export default {
     title: 'For the Health of It',
     meta: [
       {
-        hid: 'og:title',
-        property: 'og:title',
-        content: "For the Health of it",
-      },
-      {
-        hid: 'og:image',
-        property: 'og:image',
-        content: "hk_mobile_logo.png",
-      },
+        hid: 'description',
+        name: 'description',
+        content: 'Healthcare resources you can depend on'
+      }
     ],
     link: [
       {
