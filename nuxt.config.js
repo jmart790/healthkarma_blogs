@@ -30,16 +30,16 @@ export default {
         name: 'description',
         content: 'Healthcare resources you can depend on'
       },
-      // {
-      //   hid: 'twitter:card',
-      //   name: 'twitter:card',
-      //   content: 'summary_large_image'
-      // },
-      // {
-      //   hid: 'twitter:site',
-      //   name: 'twitter:site',
-      //   content: '@HealthKarmaApp'
-      // },
+      {
+        hid: 'twitter:card',
+        name: 'twitter:card',
+        content: 'summary_large_image'
+      },
+      {
+        hid: 'twitter:site',
+        name: 'twitter:site',
+        content: '@HealthKarmaApp'
+      },
       // {
       //   hid: 'twitter:url',
       //   name: 'twitter:url',
