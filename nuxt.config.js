@@ -87,11 +87,6 @@ export default {
         property: 'og:image:secure_url',
         content: 'hk_mobile_logo.pngg'
       },
-      {
-        hid: 'og:image:alt',
-        property: 'og:image:alt',
-        content: 'NuxtJS'
-      }
     ],
     link: [
       {
