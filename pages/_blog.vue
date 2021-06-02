@@ -4,6 +4,7 @@
       :title="title"
       :description="description"
       :image="image"
+      :url="url"
       />
     <h-button
       variant="terciary"
