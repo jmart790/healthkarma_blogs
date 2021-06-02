@@ -45,9 +45,6 @@ export default {
     image(){
       if (this.blog) return this.blog.thumbnail_image.url;
     },
-    summary() {
-      if (this.blog) return this.blog.blog_summary;
-    },
     url() {
       if (this.blog)  return `https://blog.healthkarma.org${this.blog.url}`;
     }
@@ -80,7 +77,7 @@ export default {
   },
   head() {
     return {
-      title: `For the Health of It | ${this.title}`,
+      title: this.title,
       meta: [
         {
           hid: 'description',
@@ -100,7 +97,7 @@ export default {
         {
           hid: 'og:description',
           property: 'og:description',
-          content: this.summary,
+          content: this.description,
         },
         {
           hid: 'og:image',
@@ -110,7 +107,6 @@ export default {
         // {property: "article:published_time", content: this.blog.created_at,},
         // {property: "article:modified_time", content: this.blog.updated_at,},
         // {property: "article:tag", content: this.blog.tags ? this.blog.tags.toString() : "",},
-        {name: 'twitter:card', content: 'summary_large_image'},
         {
           hid: "twitter:url",
           name: "twitter:url",
@@ -124,7 +120,7 @@ export default {
         {
           hid: 'twitter:description',
           name: 'twitter:description',
-          content: this.summary
+          content: this.description
         },
         // image must be an absolute path
         {
