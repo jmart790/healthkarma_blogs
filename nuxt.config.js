@@ -60,7 +60,7 @@ export default {
       //   content: 'hk_mobile_logo.png'
       // },
       // { hid: 'og:site_name', property: 'og:site_name', content: 'For the Health of it' },
-      // { hid: 'og:type', property: 'og:type', content: 'website' },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
       // {
       //   hid: 'og:url',
       //   property: 'og:url',
