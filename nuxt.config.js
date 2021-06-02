@@ -16,7 +16,6 @@ export default {
   },
   head: {
     title: 'For the Health of it',
-    titleTemplate: 'For the Health of it | %s',
     htmlAttrs: {
       lang: 'en',
       amp: true
