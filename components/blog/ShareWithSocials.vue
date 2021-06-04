@@ -101,8 +101,7 @@ export default {
   },
   methods: {
     shareSocial(socialRef) {
-      const isDevelopment = process.env.NODE_ENV === 'development';
-      if (!isDevelopment) segmentEvents.blogPostShared(socialRef);
+      segmentEvents.blogPostShared(socialRef);
       this.$refs[socialRef].showShareWindow();
     }
   }

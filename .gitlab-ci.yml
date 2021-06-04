@@ -1,6 +1,22 @@
 stages:
   - build
+  - build_deploy
   - deploy
+
+Deploy to Staging:
+  image: alpine:latest
+  stage: build_deploy
+  only:
+    - staging
+  before_script:
+    - apk update
+    - apk add openssh
+    - mkdir -p ~/.ssh
+    - echo -e "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+  script:
+    - ssh web1@10.255.22.193 "cd blog/www/ && sh deploy.sh && exit"
 
 # build stage
 build_app:
@@ -11,6 +27,7 @@ build_app:
   script:
     - echo -e $DOT_ENV >> .env
     - npm install
+    - npm run build
     - npm run generate
   cache:
     paths:

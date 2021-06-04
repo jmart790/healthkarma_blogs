@@ -40,7 +40,7 @@ import segmentEvents from "~/segmentEvents";
 export default {
   async asyncData({ $axios, $config: { baseURL } }) {
     const blogs = (await $axios.$get(`${baseURL}/blogs`)).data;
-    const blogsPerPage = 8;
+    const blogsPerPage = 9;
 
     let blogPages = []
     for (let i = 0; i < blogs.length; i += blogsPerPage) {
@@ -69,9 +69,8 @@ export default {
       this.isLargePagination = true;
     },
     selectedBlogPostHandler(postInformation) {
-      const isDevelopment = process.env.NODE_ENV === 'development';
-      if (!isDevelopment) segmentEvents.blogPostViewed(postInformation);
-      this.$router.push(postInformation.url);
+     segmentEvents.blogPostViewed(postInformation);
+     this.$router.push(postInformation.url);
     }
   },
   head: {
@@ -82,6 +81,13 @@ export default {
         name: 'description',
         content: 'Healthcare resources you can depend on'
       }
+    ],
+    link: [
+      {
+        hid: "canonical",
+        rel: "canonical",
+        href: "https://blog.healthkarma.org/",
+      },
     ],
   }
 }
@@ -102,7 +108,7 @@ export default {
     font-weight: 400;
     line-height: 1.6;
     color: #202656;
-    @media screen and (min-width: $tablet) { 
+    @media screen and (min-width: $tablet) {
       font-size: 48px;
       margin-bottom: $spacing_l;
     }
