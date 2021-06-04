@@ -5,8 +5,8 @@ export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   generate: {
     async routes() {
-      return await axios.get(`${process.env.NUXT_ENV_API_URL}/blogs`).then(res => {
-        return res.data.data.map(blog => {
+      return await axios.get(`${process.env.NUXT_ENV_API_URL}/blogs`).then(async res => {
+        return await res.data.data.map(blog => {
           return {
             route: blog.url,
             payload: blog
@@ -21,30 +21,30 @@ export default {
       { charset: 'utf-8' },
       { name: "HandheldFriendly", content: "True" },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Healthcare resources you can depend on' },
+      // { hid: 'description', name: 'description', content: 'Healthcare resources you can depend on' },
       // for apps that use Open Graph
-      { property: "og:site_name", content: "For The Health Of It"},
-      { hid: "og:type", property: "og:type", content: "website" },
-      {
-        hid: 'og:url',
-        property: 'og:url',
-        content: "https://blog.healthkarma.org/",
-      },
-      {
-        hid: 'og:title',
-        property: 'og:title',
-        content: "For the Health of it",
-      },
-      {
-        hid: 'og:description',
-        property: 'og:description',
-        content: 'Healthcare resources you can depend on',
-      },
-      {
-        hid: 'og:image',
-        property: 'og:image',
-        content: "./static/hk_mobile_logo.png",
-      },
+      // { property: "og:site_name", content: "For The Health Of It"},
+      // { hid: "og:type", property: "og:type", content: "website" },
+      // {
+      //   hid: 'og:url',
+      //   property: 'og:url',
+      //   content: "https://blog.healthkarma.org/",
+      // },
+      // {
+      //   hid: 'og:title',
+      //   property: 'og:title',
+      //   content: "For the Health of it",
+      // },
+      // {
+      //   hid: 'og:description',
+      //   property: 'og:description',
+      //   content: 'Healthcare resources you can depend on',
+      // },
+      // {
+      //   hid: 'og:image',
+      //   property: 'og:image',
+      //   content: "./static/hk_mobile_logo.png",
+      // },
     ],
     link: [
       {
