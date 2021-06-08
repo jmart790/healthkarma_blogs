@@ -90,12 +90,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'hk_mobile_logo.png'
-      },
-      {
-        hid: 'og:image:secure_url',
-        property: 'og:image:secure_url',
-        content: 'hk_mobile_logo.pngg'
+        content: 'https://heuristic-raman-e1787d.netlify.app/hk_mobile_logo.png'
       },
     ],
     link: [
