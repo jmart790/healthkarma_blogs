@@ -68,7 +68,7 @@ export default {
       {
         hid: 'twitter:image',
         name: 'twitter:image',
-        content: 'hk_mobile_logo.png'
+        content: 'https://heuristic-raman-e1787d.netlify.app/favicon-96x96.png'
       },
       { hid: 'og:site_name', property: 'og:site_name', content: 'For the Health of it' },
       { hid: 'og:type', property: 'og:type', content: 'website' },
@@ -90,7 +90,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://heuristic-raman-e1787d.netlify.app/hk_mobile_logo.png'
+        content: 'https://heuristic-raman-e1787d.netlify.app/favicon-96x96.png'
       },
     ],
     link: [
