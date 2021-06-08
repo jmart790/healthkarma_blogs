@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="98" height="114" viewBox="0 0 98 114">
+    <defs>
+        <rect id="tl427oe3xa" width="98" height="114" x="0" y="0" rx="5"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g transform="translate(-80 -1517) translate(34 967) translate(34 538) translate(12 12)">
+                        <mask id="ks7qdcf0lb" fill="#fff">
+                            <use xlink:href="#tl427oe3xa"/>
+                        </mask>
+                        <use fill="#F3F5F7" xlink:href="#tl427oe3xa"/>
+                        <g mask="url(#ks7qdcf0lb)">
+                            <g>
+                                <path fill="#F8D7D7" fill-rule="nonzero" d="M98 40.747v38.506c0 .412-.343.747-.766.747H.766C.343 80 0 79.665 0 79.253V40.747C0 40.335.343 40 .766 40h96.468c.423 0 .766.335.766.747z" transform="translate(0 34)"/>
+                                <path fill="#EEB3D3" fill-rule="nonzero" d="M92 40v40h5.223c.43 0 .777-.335.777-.747V40.747c0-.412-.348-.747-.777-.747H92z" opacity=".411" transform="translate(0 34)"/>
+                                <path fill="#EEB3D3" fill-rule="nonzero" d="M98 40.715v11.641C94.683 53.444 92.552 55 86.465 55c-9.368 0-9.368-3.682-18.735-3.682-9.366 0-9.366 3.682-18.732 3.682s-9.366-3.682-18.73-3.682C20.9 51.318 20.9 55 11.535 55 5.448 55 3.317 53.444 0 52.356v-11.64C0 40.32.343 40 .766 40h96.468c.423 0 .766.32.766.715z" opacity=".431" transform="translate(0 34)"/>
+                                <path fill="#EEB3D3" fill-rule="nonzero" d="M92 40v14.526c2.632-.648 4.632-1.203 6-1.664V40.745c0-.412-.348-.745-.777-.745H92z" opacity=".656" transform="translate(0 34)"/>
+                                <g>
+                                    <path fill="#5D6369" fill-rule="nonzero" d="M18.317.486c.115-.372-.264-.665-.46-.356C8.641 14.603.053 43.08.053 61.254c0 7.398 2.889 8.657 5.881 8.657 3.986 0 5.875-2.868 5.204-8.559C8.137 35.872 15.95 8.114 18.317.486zM53.918.486c.115-.372-.264-.665-.46-.356-9.214 14.473-17.803 42.95-17.803 61.124 0 7.398 2.89 8.657 5.882 8.657 3.985 0 5.874-2.868 5.204-8.559-3.003-25.48 4.81-53.238 7.177-60.866z" transform="translate(0 34) translate(25)"/>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

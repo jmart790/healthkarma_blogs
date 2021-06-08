@@ -1,0 +1,5 @@
+// Resetting some things that bootstrap initializes that could negatively effect our design system
+.h-input-group p,
+.h-password-input-group p {
+  margin-bottom: unset;
+}

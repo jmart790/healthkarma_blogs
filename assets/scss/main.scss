@@ -1,0 +1,20 @@
+// Put any additional classes in the appropriate partial, and import the file at the bottom of custom.scss
+// test to make sure its working based on import order before send PR.
+// @import is being phased out in favor of @use, so be aware that this may need refactoring in the future.
+
+// contains default variables must be before bootstrap import
+// @import "node_modules/bootstrap/scss/bootstrap.scss";
+// @import "node_modules/bootstrap-vue/src/index.scss";
+// @import url("https://use.typekit.net/txy4xip.css");
+// contains classes that must be after bootstrap import
+@import "./partials/variables";
+@import "./partials/text";
+@import "./partials/base";
+@import "./partials/cta";
+@import "./partials/cards";
+@import "./partials/utilities";
+@import "./partials/lists";
+@import "./partials/screen-sizes";
+@import "partials/icons";
+@import "partials/design-system-protection";
+

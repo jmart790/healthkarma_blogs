@@ -1,0 +1,63 @@
+a{
+  &:link {
+    text-decoration: none;
+  }
+  &:visited {
+    text-decoration: none;
+  }
+  &:hover {
+    text-decoration: none;
+    color: $salmon;
+  }
+  &:active {
+    text-decoration: none;
+  }
+}
+html, body {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+.text-danger {
+  color: #d02683 !important;
+}
+
+/* tooltip */
+.tippy-tooltip {
+  background: #cdede5;
+  color: #272f37;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2);
+}
+.tippy-popper[x-placement^='top']
+.tippy-tooltip.consumers-theme
+.tippy-arrow {
+  border-top: 7px solid #cdede5;
+}
+.tippy-popper[x-placement^='top']
+.tippy-tooltip.consumers-theme
+.tippy-arrow::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -6px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #cdede5;
+}
+.tippy-popper[x-placement^='bottom']
+.tippy-tooltip.consumers-theme
+.tippy-arrow {
+  border-bottom: 7px solid #cdede5;
+}
+.tippy-popper[x-placement^='bottom']
+.tippy-tooltip.consumers-theme
+.tippy-arrow::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: -6px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #cdede5;
+}

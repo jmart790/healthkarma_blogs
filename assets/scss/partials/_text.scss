@@ -1,0 +1,74 @@
+// Text Styles  reflect the design system in Zeplin
+// Use these instead of creating custom font style, all you need to add is the color/text variant
+
+@mixin fontStyle($size, $height, $space, $weight) {
+	font-size: $size;
+	line-height: $height;
+	letter-spacing: $space;
+	font-weight: $weight;
+}
+
+// new styles
+
+// dashboard small widget titles
+.header__m {
+	@include fontStyle(18px, 24px, 0, 600);
+}
+
+.header__ro {
+	@include fontStyle(18px, 20px, 0, 600);
+}
+
+// old styles
+.header__display {
+	@include fontStyle(60px, 64px, 0, 300);
+}
+.header__main {
+	@include fontStyle(32px, 40px, 0, 500);
+}
+.header__sub {
+	@include fontStyle(24px, 32px, 0, 500)
+}
+.header__sub-2 {
+	@include fontStyle(24px, 32px, 0, 600)
+}
+.header__title {
+	@include fontStyle(28px, 32px, 0, 600)
+}
+.header__label {
+	@include fontStyle(16px, 16px, 0, 100)
+}
+.header__sm {
+	@include fontStyle(14px, 16px, 0, normal)
+}
+.text__secondary {
+	@include fontStyle(16px, normal, -0.23px, normal)
+}
+.body__1 {
+	@include fontStyle(18px, 28px, 0, 500)
+}
+.user-profile-card__heading {
+	@include fontStyle(24px, 32px, 0, 600)
+}
+.user-profile-card__text {
+	@include fontStyle(18px, 27px, 0, 500)
+}
+.body__sm {
+	@include fontStyle(16px, 16px, 0, 500)
+}
+.note__sm {
+	@include fontStyle(14px, 16px, 0, normal)
+}
+.dashboard-coinsurnace_percentage {
+	@include fontStyle(40px, 40px, 0, 500)
+}
+label {
+	margin-bottom: 0.5rem;
+	font-family: "Lato", sans-serif;
+	font-weight: 500;
+	line-height: 1.2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font-heading;
+}

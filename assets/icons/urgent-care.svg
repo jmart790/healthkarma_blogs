@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="110" height="110" viewBox="0 0 110 110">
+    <defs>
+        <filter id="esgr4bx1ea" width="136.7%" height="136.7%" x="-15%" y="-17.2%" filterUnits="objectBoundingBox">
+            <feOffset dx="3" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="5"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.937254902 0 0 0 0 0.964705882 0 0 0 0 1 0 0 0 1 0"/>
+        </filter>
+        <circle id="x1zdpy3b3b" cx="45" cy="45" r="45"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g transform="translate(-243 -611) translate(36 582) translate(214 38)">
+                        <use fill="#000" filter="url(#esgr4bx1ea)" xlink:href="#x1zdpy3b3b"/>
+                        <use fill="#FFF" xlink:href="#x1zdpy3b3b"/>
+                    </g>
+                    <g fill-rule="nonzero">
+                        <g>
+                            <path fill="#DF3838" d="M29.917 35.96H.037V17.244C.037 7.746 6.697.048 14.914.048h.126c8.216 0 14.877 7.698 14.877 17.195V35.96z" transform="translate(-243 -611) translate(36 582) translate(214 38) translate(19 12) translate(12 14)"/>
+                            <path fill="#FFF" d="M15.04.048h-.126c-.432 0-.858.022-1.28.064 7.616.75 13.596 8.133 13.596 17.13v18.719h2.687V17.242c0-9.496-6.66-17.194-14.877-17.194z" opacity=".267" transform="translate(-243 -611) translate(36 582) translate(214 38) translate(19 12) translate(12 14)"/>
+                            <path fill="#FFB734" d="M10.424 35.96V19.065c0-2.866 2.017-5.197 4.496-5.197h.113c2.48 0 4.496 2.331 4.496 5.197V35.96h-9.105z" transform="translate(-243 -611) translate(36 582) translate(214 38) translate(19 12) translate(12 14)"/>
+                        </g>
+                        <g>
+                            <path fill="#DCDCDC" d="M41.826 36.994H1.224c-.835 0-1.395-.564-1.062-1.068l3.799-5.741c.417-.631 1.367-1.04 2.417-1.04h30.293c1.05 0 2 .409 2.418 1.04l3.798 5.741c.334.504-.227 1.068-1.061 1.068z" transform="translate(-243 -611) translate(36 582) translate(214 38) translate(19 12) translate(5 19)"/>
+                            <path fill="#B4CAE0" d="M42.887 35.926l-3.798-5.741c-.418-.631-1.368-1.04-2.418-1.04H33.95c1.05 0 2 .41 2.418 1.04l3.799 5.741c.333.504-.227 1.068-1.062 1.068h2.722c.834 0 1.395-.564 1.061-1.068z" transform="translate(-243 -611) translate(36 582) translate(214 38) translate(19 12) translate(5 19)"/>
+                            <path fill="#FFF" d="M32.005 13.36c-.376 0-.68-.343-.68-.768 0-6.047-4.397-10.967-9.8-10.967-.376 0-.68-.344-.68-.769 0-.424.304-.768.68-.768 6.154 0 11.16 5.61 11.16 12.504 0 .425-.305.769-.68.769z" transform="translate(-243 -611) translate(36 582) translate(214 38) translate(19 12) translate(5 19)"/>
+                        </g>
+                        <g fill="#FFB734">
+                            <path d="M9.699 8.068c-.265-.305-.695-.304-.96.001-.265.306-.264.8.001 1.105l5.535 6.364c.133.152.306.228.48.228.173 0 .347-.076.48-.23.265-.305.264-.8-.001-1.104L9.699 8.068zM44.419 8.07c-.265-.306-.695-.306-.96-.002l-5.535 6.364c-.266.305-.266.8-.001 1.105.132.153.306.23.48.23s.347-.077.48-.23l5.535-6.362c.265-.305.265-.8 0-1.106z" transform="translate(-243 -611) translate(36 582) translate(214 38) translate(19 12)"/>
+                            <path d="M30.646 2.426c-.263-.271-.72-.243-1.019.063L23.38 8.872c-.3.305-.329.773-.066 1.045.132.135.312.196.497.185.184-.012.373-.095.522-.248l6.249-6.383c.3-.306.328-.774.065-1.045z" transform="translate(-243 -611) translate(36 582) translate(214 38) translate(19 12) rotate(-43 26.98 6.171)"/>
+                            <path d="M9.788 20.947c-.13-.405-.519-.612-.87-.462l-7.79 3.388c-.351.15-.531.599-.402 1.004.1.316.36.511.636.51.078 0 .157-.015.234-.048l7.79-3.387c.35-.15.531-.6.402-1.005z" transform="translate(-243 -611) translate(36 582) translate(214 38) translate(19 12) rotate(24 5.257 22.912)"/>
+                            <path d="M52.441 20.947c-.13-.405-.519-.612-.87-.462l-7.79 3.388c-.351.15-.531.599-.402 1.004.1.316.36.511.636.51.078 0 .157-.015.235-.048l7.788-3.387c.352-.15.532-.6.403-1.005z" transform="translate(-243 -611) translate(36 582) translate(214 38) translate(19 12) rotate(24 47.91 22.912)"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

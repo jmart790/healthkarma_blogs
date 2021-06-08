@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="33" height="34" viewBox="0 0 33 34">
+    <defs>
+        <filter id="tooltip__prefix__a" width="195.2%" height="195.2%" x="-47.6%" y="-38.1%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="3"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.238690997 0"/>
+        </filter>
+        <filter id="prefix__c">
+            <feColorMatrix in="SourceGraphic" values="0 0 0 0 0.999063 0 0 0 0 0.434148 0 0 0 0 0.382140 0 0 0 1.000000 0"/>
+        </filter>
+        <circle id="prefix__b" cx="10.5" cy="10.669" r="10.5"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd" transform="translate(6 4)">
+        <use fill="#000" filter="url(#tooltip__prefix__a)" xlink:href="#tooltip__prefix__b"/>
+        <use fill="#FFF" xlink:href="#tooltip__prefix__b"/>
+        <g filter="url(#tooltip__prefix__c)">
+            <path fill="#FFF" fill-rule="nonzero" d="M10.5 14.895c-.655 0-1.185.556-1.185 1.242 0 .686.53 1.242 1.185 1.242s1.185-.556 1.185-1.242c0-.686-.53-1.242-1.185-1.242zm.325-1.065h-.678c-.28 0-.508-.238-.508-.532v-.017c0-3.12 3.279-2.822 3.279-4.764 0-.888-.752-1.784-2.432-1.784-1.234 0-1.874.428-2.507 1.273-.165.22-.468.266-.688.105l-.556-.405c-.238-.174-.29-.523-.112-.762.899-1.208 1.965-1.985 3.863-1.985 2.215 0 4.126 1.32 4.126 3.558 0 2.99-3.28 2.832-3.28 4.764v.017c0 .294-.227.532-.507.532zM10.5 1.588c5.022 0 9.145 4.262 9.145 9.58 0 5.292-4.09 9.582-9.145 9.582-5.049 0-9.145-4.283-9.145-9.581 0-5.287 4.09-9.58 9.145-9.58m0-1.42C4.701.169 0 5.096 0 11.169c0 6.076 4.701 11 10.5 11s10.5-4.924 10.5-11c0-6.073-4.701-11-10.5-11z"/>
+        </g>
+    </g>
+</svg>

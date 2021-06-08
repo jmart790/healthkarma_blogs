@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="701px" height="534px" viewBox="0 0 701 534" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.1 (89650) - https://sketch.com -->
+    <title>Rectangle</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="47.1900933%" y1="75.3906772%" x2="24.436476%" y2="22.188368%" id="linearGradient-1">
+            <stop stop-color="#FF6F61" offset="0.0527871622%"></stop>
+            <stop stop-color="#FF7768" offset="20.5737965%"></stop>
+            <stop stop-color="#FF7E6E" offset="46.8433277%"></stop>
+            <stop stop-color="#FF8575" offset="68.6365076%"></stop>
+            <stop stop-color="#FF8C7C" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Dashboard-Phase2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="desktop-digital-insuranceCard-Copy-11" transform="translate(-316.000000, -367.000000)" fill="url(#linearGradient-1)">
+            <path d="M582.329306,368.928662 L954.671808,438.425336 L954.671808,438.425336 C957.466787,438.947011 961.311727,442.635984 963.259721,446.664887 C963.550735,447.266772 963.787871,447.857115 963.9655,448.422538 L1017,775.79635 C1017.40278,815.641178 988.265823,846.43437 921.696375,853.357993 C782.899117,882.168372 680.947626,897.97848 615.841901,900.788318 C581.213726,902.282803 523.493868,895.863939 442.682324,881.531725 C422.078316,877.877531 404.707722,864.076659 396.490126,844.832194 L323.629564,674.202915 C309.835759,641.899747 316.09535,604.523367 339.661217,578.476992 L509.353121,390.923569 C519.587144,379.612328 533.484537,372.275411 548.59724,370.205235 L561.581715,368.42659 C568.479833,367.481668 575.484968,367.651186 582.329306,368.928662 Z" id="Rectangle"></path>
+        </g>
+    </g>
+</svg>

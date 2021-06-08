@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="110" height="110" viewBox="0 0 110 110">
+    <defs>
+        <filter id="o41m6950mb" width="136.7%" height="136.7%" x="-15%" y="-17.2%" filterUnits="objectBoundingBox">
+            <feOffset dx="3" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="5"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.937254902 0 0 0 0 0.964705882 0 0 0 0 1 0 0 0 1 0"/>
+        </filter>
+        <circle id="qet8nkpw9a" cx="45" cy="45" r="45"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g transform="translate(-648 -414) translate(36 225) translate(0 47) translate(619 151)">
+                        <mask id="ek23xa09hc" fill="#fff">
+                            <use xlink:href="#qet8nkpw9a"/>
+                        </mask>
+                        <g>
+                            <use fill="#000" filter="url(#o41m6950mb)" xlink:href="#qet8nkpw9a"/>
+                            <use fill="#FFF" xlink:href="#qet8nkpw9a"/>
+                        </g>
+                        <g fill-rule="nonzero" mask="url(#ek23xa09hc)">
+                            <g transform="translate(19.082 25.123)">
+                                <path fill="#DF3838" d="M16.612 27.56H9.967v-1.634c0-.901-.745-1.635-1.66-1.635-.917 0-1.662.734-1.662 1.635v1.634H0v-1.634c0-4.507 3.726-8.173 8.306-8.173 4.58 0 8.306 3.666 8.306 8.173v1.634zM25.673 13.981h-2.567c-5.662 0-10.27-4.568-10.27-10.184V.402h6.847v3.395c0 1.872 1.536 3.395 3.423 3.395h2.567v6.79z" opacity=".699"/>
+                                <path fill="#EEB3D3" d="M12.837.402h3.423v3.395c0 3.75 3.065 6.79 6.846 6.79h2.567v3.394h-2.567c-5.671 0-10.27-4.56-10.27-10.184V.402z"/>
+                                <path fill="#F1C2DC" d="M36.497.402c7.367 0 13.34 6.028 13.34 13.463v6.732c0 13.012-10.452 23.56-23.346 23.56-9.209 0-16.675-7.535-16.675-16.829h6.67c3.684 0 6.67-3.014 6.67-6.731v-6.732C23.156 6.43 29.13.402 36.496.402z"/>
+                                <path fill="#EEB3D3" d="M43.149 7.192c-3.694 0-6.688 3.009-6.688 6.72v10.082c0 5.568-4.492 10.081-10.032 10.081H19.74c-3.694 0-6.689-3.009-6.689-6.72v-1.68c0-2.785-2.245-5.041-5.016-5.041-2.77 0-5.016 2.256-5.016 5.04v1.68h3.344v-1.68c0-.928.749-1.68 1.672-1.68.924 0 1.672.752 1.672 1.68v1.68c0 9.28 7.486 16.803 16.72 16.803 12.929 0 23.409-10.532 23.409-23.523v-6.721c0-3.712-2.995-6.721-6.688-6.721z"/>
+                                <path fill="#FBE812" d="M17.18 31.332h-2.833c1.443 5.634 6.528 9.807 12.56 9.807h.102c7.17 0 13.443-3.95 16.787-9.807H17.179z"/>
+                                <path fill="#FFF" d="M26.483 22.28c-.447 0-.81-.384-.81-.858v-6.858c0-6.145 4.719-11.144 10.518-11.144.447 0 .809.384.809.857 0 .474-.362.857-.809.857-4.907 0-8.9 4.23-8.9 9.43v6.858c0 .474-.362.858-.808.858z" opacity=".652"/>
+                                <ellipse cx="22.653" cy="36.613" fill="#FFB734" rx="2.265" ry="2.263"/>
+                                <circle cx="27.184" cy="33.595" r="1" fill="#FFB734"/>
+                                <ellipse cx="34.357" cy="36.99" fill="#FFB734" rx="1.133" ry="1.132"/>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
