@@ -1,11 +1,5 @@
 <template>
   <div class="blog-page">
-<!--    <SocialHead-->
-<!--      :title="title"-->
-<!--      :description="description"-->
-<!--      :image="image"-->
-<!--      :url="url"-->
-<!--      />-->
     <h-button
       variant="terciary"
       class="px-0 blog-page__back-link"
@@ -41,21 +35,7 @@ export default {
   components: {
     RecentBlogs, BlogArticle
   },
-  computed: {
-    title() {
-      if (this.blog) return this.blog.title;
-    },
-    description() {
-      if (this.blog) return this.blog.seo.meta_description;
-    },
-    image(){
-      if (this.blog) return this.blog.thumbnail_image.url;
-    },
-    url() {
-      if (this.blog)  return `https://blog.healthkarma.org${this.blog.url}`;
-    }
-  },
-  async asyncData({ params, payload,  $axios, $config: {baseURL} }) {
+  async asyncData({ params, payload,  $axios, $config: { baseURL } }) {
     let blog;
     if (payload) blog = payload;
     else {
@@ -71,7 +51,22 @@ export default {
 
     return {
       blog,
-      recentBlogs
+      recentBlogs,
+      test: 'testingSeo'
+    }
+  },
+  computed: {
+    title() {
+      if (this.blog) return this.blog.title;
+    },
+    description() {
+      if (this.blog) return this.blog.seo.meta_description;
+    },
+    image(){
+      if (this.blog) return this.blog.thumbnail_image.url;
+    },
+    url() {
+      if (this.blog)  return `https://blog.healthkarma.org${this.blog.url}`;
     }
   },
   methods: {
@@ -83,27 +78,22 @@ export default {
   },
   head() {
     return {
-      title: this.blog.title,
+      title: this.title,
       meta: [
-        {
-          hid: this.blog.uid + '-description',
-          name: 'Description for ' + this.blog.seo.meta_title || 'For the Health of It',
-          content: this.blog.seo.meta_description || 'Healthcare resources you can depend on',
-        },
-        {
-          hid: 'og:title',
-          name: 'og:title',
-          content: this.blog.title,
-        },
-        {
-          hid: 'og:description',
-          name: 'og:description',
-          content: this.blog.blog_summary,
+        { 
+          hid: "og:site_name",
+          property: "og:site_name", 
+          content: `For The Health Of It | ${this.title}`
         },
         {
           hid: "og:type",
           property: "og:type",
           content: "article",
+        },
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.description,
         },
         {
           hid: 'og:url',
@@ -125,7 +115,10 @@ export default {
           property: 'og:image',
           content: this.image,
         },
-        {property: "article:tag", content: this.blog.tags ? this.blog.tags.toString() : "",},
+        {
+          property: "article:tag", 
+          content: this.blog.tags ? this.blog.tags.toString() : "",
+        },
         {
           hid: "twitter:url",
           name: "twitter:url",
