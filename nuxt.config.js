@@ -68,7 +68,7 @@ export default {
       {
         hid: 'twitter:image',
         name: 'twitter:image',
-        content: 'https://heuristic-raman-e1787d.netlify.app/logo-hkc-icon-blue-plum.png'
+        content: 'https://images.contentstack.io/v3/assets/blte2a4802b6d21a2c1/bltbaaccca0e452f7b2/60c105d985c4c2118e317477/HK_logo.jpg'
       },
       { hid: 'og:site_name', property: 'og:site_name', content: 'For the Health of it' },
       { hid: 'og:type', property: 'og:type', content: 'website' },
@@ -90,7 +90,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://heuristic-raman-e1787d.netlify.app/logo-hkc-icon-blue-plum.png'
+        content: 'https://images.contentstack.io/v3/assets/blte2a4802b6d21a2c1/bltbaaccca0e452f7b2/60c105d985c4c2118e317477/HK_logo.jpg'
       },
     ],
     link: [
